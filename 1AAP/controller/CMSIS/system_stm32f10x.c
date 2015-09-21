@@ -46,11 +46,11 @@
 //#define SYSCLK_FREQ_20MHz  20000000
 //#define SYSCLK_FREQ_36MHz  36000000
 //#define SYSCLK_FREQ_48MHz  48000000
-//#define SYSCLK_FREQ_56MHz  56000000
-#define SYSCLK_FREQ_72MHz  72000000
+#define SYSCLK_FREQ_56MHz  56000000
+//#define SYSCLK_FREQ_72MHz  72000000
 
-//APP起始flash
-#define   FLASH_START         30000
+//使用boot，APP起始flash
+//#define   FLASH_START         0x10000
 /*******************************************************************************
 *  Clock Definitions
 *******************************************************************************/
@@ -201,9 +201,11 @@ void SystemInit (void)
 #ifdef VECT_TAB_SRAM
   SCB->VTOR = SRAM_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM. */
 #else
+#ifdef FLASH_START
   SCB->VTOR = FLASH_BASE | FLASH_START; /* Vector Table Relocation in Internal FLASH. */
 #endif 
-}
+#endif 
+} 
 
 /**
   * @brief Configures the System clock frequency, HCLK, PCLK2 and PCLK1 

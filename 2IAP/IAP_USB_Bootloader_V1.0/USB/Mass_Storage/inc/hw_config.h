@@ -35,7 +35,7 @@
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Flash memory address from where user application will be loaded */
-#define ApplicationAddress 0x08030000	//APP程序起始地址，是Bootloader程序大小而定
+#define ApplicationAddress 0x08010000	//APP程序起始地址，是Bootloader程序大小而定
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */

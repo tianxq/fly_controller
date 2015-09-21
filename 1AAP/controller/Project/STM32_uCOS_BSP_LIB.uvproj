@@ -167,7 +167,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
         </Utilities>
         <TargetArmAds>
@@ -298,7 +298,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x10000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -351,7 +351,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER,</Define>
               <Undefine></Undefine>
-              <IncludePath>..\FWlib\inc;..\CMSIS;..\App;..\Bsp;..\uCOS-II\Source;..\uCOS-II\Config;..\uCOS-II\Ports</IncludePath>
+              <IncludePath>..\FWlib\inc;..\CMSIS;..\App;..\Bsp;..\uCOS-II\Source;..\uCOS-II\Config;..\uCOS-II\Ports;..\Bsp\usb</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -421,6 +421,26 @@
               <FileName>FIFO_App.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Bsp\FIFO_App.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>sbus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\sbus.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\key.c</FilePath>
             </File>
           </Files>
         </Group>

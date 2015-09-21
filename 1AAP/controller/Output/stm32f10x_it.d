@@ -1,12 +1,13 @@
 ..\output\stm32f10x_it.o: ..\Bsp\stm32f10x_it.c
 ..\output\stm32f10x_it.o: ..\App\includes.h
 ..\output\stm32f10x_it.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
-..\output\stm32f10x_it.o: ..\FWlib\inc\stm32f10x_dbgmcu.h
+..\output\stm32f10x_it.o: ..\FWlib\inc\stm32f10x_adc.h
 ..\output\stm32f10x_it.o: ..\CMSIS\stm32f10x.h
 ..\output\stm32f10x_it.o: ..\CMSIS\core_cm3.h
 ..\output\stm32f10x_it.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 ..\output\stm32f10x_it.o: ..\CMSIS\system_stm32f10x.h
 ..\output\stm32f10x_it.o: ..\Bsp\stm32f10x_conf.h
+..\output\stm32f10x_it.o: ..\FWlib\inc\stm32f10x_dbgmcu.h
 ..\output\stm32f10x_it.o: ..\FWlib\inc\stm32f10x_dma.h
 ..\output\stm32f10x_it.o: ..\FWlib\inc\stm32f10x_exti.h
 ..\output\stm32f10x_it.o: ..\FWlib\inc\stm32f10x_flash.h
@@ -28,4 +29,8 @@
 ..\output\stm32f10x_it.o: ..\App\includes.h
 ..\output\stm32f10x_it.o: ..\Bsp\rs485.h
 ..\output\stm32f10x_it.o: ..\Bsp\FIFO_App.h
+..\output\stm32f10x_it.o: ..\Bsp\led.h
+..\output\stm32f10x_it.o: ..\Bsp\sbus.h
+..\output\stm32f10x_it.o: ..\Bsp\adc.h
+..\output\stm32f10x_it.o: ..\Bsp\key.h
 ..\output\stm32f10x_it.o: ..\Bsp\stm32f10x_it.h

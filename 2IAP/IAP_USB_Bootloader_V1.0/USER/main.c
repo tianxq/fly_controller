@@ -35,17 +35,71 @@ u8 DFU_Mask_Read(void)
   ReadFlashNBtye(0, &mask, 1);  
 	return mask;
 }
+
+void DFU_Button_Config1(void)
+{
+	GPIO_InitTypeDef  GPIO_InitStructure;
+
+    /* Enable the GPIO_LED Clock */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+    /* Configure the GPIO_LED pin */
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+    GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+}
+
+void RCC_Configuration(void)
+{
+  RCC_DeInit();//??? RCC?????????
+ 
+  RCC_HSICmd(ENABLE);//??HSI  
+  while(RCC_GetFlagStatus(RCC_FLAG_HSIRDY) == RESET)//??HSI????
+  {
+  }
+ 
+  if(1)
+  {   
+    RCC_HCLKConfig(RCC_SYSCLK_Div1);   
+    RCC_PCLK1Config(RCC_HCLK_Div2);
+    RCC_PCLK2Config(RCC_HCLK_Div1);
+
+    RCC_PLLConfig(RCC_PLLSource_HSI_Div2, RCC_PLLMul_12);                
+    RCC_PLLCmd(ENABLE);
+
+    while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
+    {
+    }
+ 
+    //??????(SYSCLK) ??PLL??????
+    RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);   
+    while(RCC_GetSYSCLKSource() != 0x08)
+    {
+    }
+  }
+}
 /**********************************************************
                            主函数
 **********************************************************/
 int main(void)
 {
 	u8 i=0;
-
+  RCC_ClocksTypeDef* RCC_Clocks;
+	
+	//RCC_Configuration();//用内部晶振，并且屏蔽掉SystemInit
 	delay_init(72);	//初始化延时函数
 	LED_Init();	//初始化LED接口
 
-	if(DFU_Mask_Read() == 0)
+	DFU_Button_Config1();	//初始化跳转APP程序按键
+	
+
+	i=RCC_GetSYSCLKSource();
+	RCC_GetClocksFreq( RCC_Clocks);
+	
+	//if(DFU_Mask_Read() == 1)//修改判断
+	//检测是否进入DFU模式按键，开机没有按下则跳转到APP程序中执行
+	if(DFU_Button_Read() == 1)
 	{
 		if(((*(__IO uint32_t*)ApplicationAddress) & 0x2FFE0000 ) == 0x20000000)	//检测APP地址是否合法
 		{
@@ -63,7 +117,7 @@ int main(void)
 
 
 	//进入APP升级模式
-	WriteFlashNBtye(0,&i,4); //擦除标志
+	//WriteFlashNBtye(0,&i,4); //擦除标志
 
 	DeviceState = STATE_dfuERROR;
 	DeviceStatus[0] = STATUS_ERRFIRMWARE;

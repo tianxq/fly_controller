@@ -72,7 +72,7 @@ UsartInfo nCom4;
 #endif
 
 /******************************* 串口1初始化 *******************************/
-unsigned char ComPort1Init(uint32_t Bps,uint8_t Party)//ComPort1Init()
+unsigned char ComPort1Init(uint32_t Bps,uint16_t Party)//ComPort1Init()
 {
 	//串口初始化参数
 	nCom1.nCom = USART1;										//串口号
@@ -132,7 +132,7 @@ unsigned char ComPort1Init(uint32_t Bps,uint8_t Party)//ComPort1Init()
 }
 
 /******************************* 串口2初始化 *******************************/
-unsigned char ComPort2Init(uint32_t Bps,uint8_t Party)
+unsigned char ComPort2Init(uint32_t Bps,uint16_t Party)
 {
 	//串口初始化参数
 	nCom2.nCom = USART2;										//串口号

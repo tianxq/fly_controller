@@ -426,9 +426,9 @@ ARM Macro Assembler    Page 7
               00000000 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=..\outpu
-t\os_cpu_a.d -o..\output\os_cpu_a.o -Id:\Keil\ARM\RV31\INC -Id:\Keil\ARM\CMSIS\
-Include -Id:\Keil\ARM\Inc\ST\STM32F10x --list=..\listing\os_cpu_a.lst ..\uCOS-I
-I\Ports\os_cpu_a.asm
+t\os_cpu_a.d -o..\output\os_cpu_a.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\
+Include -IC:\Keil\ARM\Inc\ST\STM32F10x --predefine="__EVAL SETA 1" --list=..\li
+sting\os_cpu_a.lst ..\uCOS-II\Ports\os_cpu_a.asm
 
 
 
@@ -635,4 +635,4 @@ Symbol: OSTaskSwHook
       At line 219 in file ..\uCOS-II\Ports\os_cpu_a.asm
 Comment: OSTaskSwHook used once
 8 symbols
-353 symbols in table
+354 symbols in table

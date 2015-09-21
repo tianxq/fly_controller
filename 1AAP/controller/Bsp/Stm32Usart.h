@@ -112,10 +112,10 @@ extern UsartInfo nCom4;
 /******************************************************************************
 **串口初始化
 *******************************************************************************/
-unsigned char ComPort1Init(uint32_t Bps,uint8_t Party);
+unsigned char ComPort1Init(uint32_t Bps,uint16_t Party);
 
 /******************************* 串口2初始化 *******************************/
-unsigned char ComPort2Init(uint32_t Bps,uint8_t Party);
+unsigned char ComPort2Init(uint32_t Bps,uint16_t Party);
 
 /******************************* 串口3初始化 *******************************/
 unsigned char TD3020ComInit(uint32_t Bps);

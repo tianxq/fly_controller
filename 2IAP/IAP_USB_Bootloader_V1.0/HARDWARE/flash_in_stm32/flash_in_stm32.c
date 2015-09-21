@@ -1,7 +1,7 @@
 
 #include "stm32_config.h"
 
-#define  STARTADDR  0x0807F800   //主存的第255页首地址   
+#define  STARTADDR  0x0801FC00   //主存的第127页首地址   
 volatile FLASH_Status FLASHStatus = FLASH_COMPLETE;   
 
 void ReadFlashNBtye(uint32_t ReadAddress, uint8_t *ReadBuf, uint8_t ReadNum)  

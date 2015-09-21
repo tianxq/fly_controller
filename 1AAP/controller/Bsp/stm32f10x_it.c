@@ -428,6 +428,17 @@ void DMA1_Channel2_IRQHandler(void)
 /****************************************************************************
 **Õ‚≤ø÷–∂œœ
 *****************************************************************************/
+uint8_t  sbusData2[6]={0x5a,0xa5};
+void EXTI2_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line2)!=RESET)
+  {
+    EXTI_ClearITPendingBit(EXTI_Line2);
+		RS485Send(1,sbusData2,6);
+  }
+  EXTI_ClearITPendingBit(EXTI_Line2);
+}
+
 //Œﬁœﬂ ˝æ›Ω” ’FIFO
 #if 0
 Queue QueueRFrxFIFO;

@@ -6,7 +6,7 @@
 /************************************************************
 *485收发控制脚初始化
 *************************************************************/
-void rs485_1_Init(uint32_t bps,uint8_t Parity)
+void rs485_1_Init(uint32_t bps,uint16_t Parity)
 {
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
@@ -25,7 +25,7 @@ void rs485_1_Init(uint32_t bps,uint8_t Parity)
 /************************************************************
 *485收发控制脚初始化
 *************************************************************/
-void rs485_2_Init(uint32_t bps,uint8_t Parity)
+void rs485_2_Init(uint32_t bps,uint16_t Parity)
 {
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
@@ -92,8 +92,21 @@ uint16_t RS485Recive(uint8_t pSn,uint8_t *rxbuf,uint16_t len,uint16_t timeout)
 	return rxLen;	
 }
 
-
-
+/************************************************************
+*485校验和
+*************************************************************/
+uint8_t checksum8(uint8_t *chk8,uint8_t num) 
+{        
+	uint8_t temp=0;
+	for( ;num>0;num--)
+	{
+		temp=temp+*chk8;
+		if(temp<*chk8)
+		temp++;
+		chk8++;
+	}    
+	return temp;
+}
 
 
 

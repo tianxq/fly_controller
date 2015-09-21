@@ -25,7 +25,7 @@
 /* Includes ------------------------------------------------------------------*/
  #include <string.h>
 /* Uncomment the line below to enable peripheral header file inclusion */
-/* #include "stm32f10x_adc.h" */
+#include "stm32f10x_adc.h" 
 /* #include "stm32f10x_bkp.h" */
 /* #include "stm32f10x_can.h" */
 /* #include "stm32f10x_cec.h" */
@@ -60,7 +60,13 @@
 //#include "si4432.h" 
 //#include "own_spi.h"
 #include "FIFO_App.h"
+#include "led.h"
+#include "sbus.h"
+#include "adc.h"
+#include "key.h"
 
+//使用bootload
+//#define JKB_SW_H
 //无线数据接收FIFO
 extern Queue QueueRFrxFIFO;
 

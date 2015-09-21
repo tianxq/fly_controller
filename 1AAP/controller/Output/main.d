@@ -1,12 +1,13 @@
 ..\output\main.o: ..\App\main.c
 ..\output\main.o: ..\App\includes.h
 ..\output\main.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
-..\output\main.o: ..\FWlib\inc\stm32f10x_dbgmcu.h
+..\output\main.o: ..\FWlib\inc\stm32f10x_adc.h
 ..\output\main.o: ..\CMSIS\stm32f10x.h
 ..\output\main.o: ..\CMSIS\core_cm3.h
 ..\output\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 ..\output\main.o: ..\CMSIS\system_stm32f10x.h
 ..\output\main.o: ..\Bsp\stm32f10x_conf.h
+..\output\main.o: ..\FWlib\inc\stm32f10x_dbgmcu.h
 ..\output\main.o: ..\FWlib\inc\stm32f10x_dma.h
 ..\output\main.o: ..\FWlib\inc\stm32f10x_exti.h
 ..\output\main.o: ..\FWlib\inc\stm32f10x_flash.h
@@ -28,3 +29,7 @@
 ..\output\main.o: ..\App\includes.h
 ..\output\main.o: ..\Bsp\rs485.h
 ..\output\main.o: ..\Bsp\FIFO_App.h
+..\output\main.o: ..\Bsp\led.h
+..\output\main.o: ..\Bsp\sbus.h
+..\output\main.o: ..\Bsp\adc.h
+..\output\main.o: ..\Bsp\key.h

@@ -172,7 +172,7 @@ void DFU_Button_Config(void)	//初始化升级按键
 *******************************************************************************/
 uint8_t DFU_Button_Read (void)	//读取升级按键状态 
 {
-	return GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0);  
+	return GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_2);  
 }
 
 /*******************************************************************************

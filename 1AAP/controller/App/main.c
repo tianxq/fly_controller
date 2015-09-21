@@ -15,21 +15,26 @@
 #define		Task_Start_Size		100
 #define   Task_LedBeep_Stk_Size 50
 #define   Task_ADC_Stk_Size     100
-#define   Task_Wlan_Stk_Size    1000
+#define   Task_Key_Stk_Size    1000
 #define   Task_USBHID_Stk_Size    100
 
 //定义uCOS任务优先级
 #define		Task_Start_Prio			15
 #define   Task_LedBeep_Prio   12
 #define   Task_ADC_Prio       2
-#define   Task_Wlan_Prio      1
+#define   Task_Key_Prio      1
 #define   Task_USBHID_Prio    3
+
+//sbus数据
+uint8_t  sbusData[17]={0x5a,0xa5};
+uint16_t BatteryVoltage;//The battery voltage
+
 
 //定义uCOS任务堆栈
 OS_STK		Task_Start[Task_Start_Size];
 OS_STK		Task_LedBeep_Stk[Task_LedBeep_Stk_Size];
 OS_STK		Task_ADC_Stk[Task_ADC_Stk_Size];
-OS_STK		Task_Wlan_Stk[Task_Wlan_Stk_Size];
+OS_STK		Task_Key_Stk[Task_Key_Stk_Size];
 OS_STK		Task_USBHID_Stk[Task_USBHID_Stk_Size];
 
 
@@ -37,7 +42,7 @@ OS_STK		Task_USBHID_Stk[Task_USBHID_Stk_Size];
 void TaskStart(void *pdata);
 void TaskLedBeep(void *pdata);
 void TaskADC(void *pdata);
-void TaskWlan(void *pdata);
+void TaskKey(void *pdata);
 void TaskUSBHID(void *pdata);
 
 /////////////////////////////////////////////////////////////////////////
@@ -49,7 +54,7 @@ static void NVIC_Configuration(void)
 #endif
 
 #ifdef JKB_SW_H
-	NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x20000);   //使用BOOTLOADER要加上这句	H_ADDR
+	NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x10000);   //使用BOOTLOADER要加上这句	H_ADDR
 #endif
 	/* Configure the NVIC Preemption Priority Bits */
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);	
@@ -101,13 +106,13 @@ void TaskStart(void *pdata)
                     Task_ADC_Stk_Size,
                     (void *)0,
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
-	    OSTaskCreateExt(TaskWlan,
+	    OSTaskCreateExt(TaskKey,
                     (void *)0,
-                    &Task_Wlan_Stk[Task_Wlan_Stk_Size - 1],
-                    Task_Wlan_Prio,
-                    Task_Wlan_Prio,
-                    &Task_Wlan_Stk[0],
-                    Task_Wlan_Stk_Size,
+                    &Task_Key_Stk[Task_Key_Stk_Size - 1],
+                    Task_Key_Prio,
+                    Task_Key_Prio,
+                    &Task_Key_Stk[0],
+                    Task_Key_Stk_Size,
                     (void *)0,
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
 			OSTaskCreateExt(TaskUSBHID,
@@ -123,52 +128,61 @@ void TaskStart(void *pdata)
 	
 	while(1)
 	{
-		OSTimeDly(OS_TICKS_PER_SEC/5);
+		OSTimeDly(OS_TICKS_PER_SEC*5);
 	}
 }
 
-/********************************* LED初始化 *************************************/
-#define LED_GPIO    GPIOB
-#define BEEP_GPIO   GPIOB
-#define LED_RCC     RCC_APB2Periph_GPIOB
-#define LED_X       GPIO_Pin_10
-#define LED_GPS     GPIO_Pin_11
-#define LED_V       GPIO_Pin_12
-#define BEEP        GPIO_Pin_13
-
-#define LedOn(X)     GPIO_SetBits(LED_GPIO, X);
-#define LedOff(X)    GPIO_ResetBits(LED_GPIO, X);
-
-#define BeepOn(X)     GPIO_SetBits(BEEP_GPIO, X);
-#define BeepOff(X)    GPIO_ResetBits(BEEP_GPIO, X);
-
-void LedBeepInit()
-{
-    GPIO_InitTypeDef  GPIO_InitStructure;
-
-    /* Enable the GPIO_LED Clock */
-    RCC_APB2PeriphClockCmd(LED_RCC, ENABLE);
-
-    /* Configure the GPIO_LED pin */
-    GPIO_InitStructure.GPIO_Pin = LED_X|LED_GPS|LED_V;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-
-    GPIO_Init(GPIOB, &GPIO_InitStructure);
-}
 
 /********************************* uCOS任务Led *************************************/
-
+INT8U ledXstate=0,ledGPSstate=0,ledCHstate=0;//灯状态
 void TaskLedBeep(void *pdata)
 {
 
+	INT32U testtime;
 	while(1)
 	{
-		LedOn(LED_X);
-		LedOff(LED_X);
-		BeepOn(BEEP);
-		BeepOff(BEEP);
-		//检测信号量 开关灯
+		//判断显示灯状态
+		if(ledXstate)
+		{
+			LedOn(LED_X_G);
+			LedOff(LED_X_R);
+		}
+		else
+		{
+			LedOn(LED_X_R);
+			LedOff(LED_X_G);
+		}
+		if(ledGPSstate)
+		{
+			LedOn(LED_GPS_G);
+			LedOff(LED_GPS_R);
+		}
+		else
+		{
+			LedOn(LED_GPS_R);
+			LedOff(LED_GPS_G);
+		}
+		
+		if(!GPIO_ReadInputDataBit(CHG_GPIO,CHG_ERR) 
+			&& GPIO_ReadInputDataBit(CHG_GPIO,CHG_STA))
+		{
+			LedOn(LED_CH_R);
+			LedOff(LED_CH_G);
+		}
+		else
+		{
+			LedOn(LED_CH_G);
+			LedOff(LED_CH_R);
+		}
+
+		//蜂鸣器
+//		BeepOn();
+//		OSTimeDly(OS_TICKS_PER_SEC/50);
+//		BeepOff();
+		
+		//马达
+		MotoOn(MOTO);
+		
 		OSTimeDly(OS_TICKS_PER_SEC/2);
 	}
 }
@@ -176,124 +190,172 @@ void TaskLedBeep(void *pdata)
 /********************************* uCOS任务ADC *************************************/
 void TaskADC(void *pdata)
 {
+	uint16_t i,j;
+	uint16_t ADResults[CHANNEL_NUM];
+	uint16_t ADtoFilter[CHANNEL_NUM][AVERAGE_FILTER_BUFFER_SIZE];
 	
 	while(1)
 	{
 
-		OSTimeDly(OS_TICKS_PER_SEC/20);
+		for(i=0;i<CHANNEL_NUM;i++)
+		{
+			for(j=0;j<AVERAGE_FILTER_BUFFER_SIZE;j++)
+			{
+				ADtoFilter[i][j]=AD_Value[j][i];
+			}
+		}
+		for(i=0;i<CHANNEL_NUM;i++)
+		{
+			ADResults[i]=average_filter(&ADtoFilter[i][0]);
+		}
+				
+		for(i=0;i<CHANNEL_NUM;i++)
+		{
+			ADResults[i]=ADResults[i]>>1;
+		}
+		sbusData[2]=1;
+		sbusData[3]=12;
+		memcpy(sbusData+4,ADResults,12);
+		
+		sbusData[16]=checksum8(sbusData,16);
+		//RS485Send(1,sbusData,17);
+		
+		BatteryVoltage=ADResults[6];
+		
+		if(BatteryVoltage< 0x700)
+		{
+			ledCHstate=0;
+	  }
+		else
+		{
+			ledCHstate=1;
+		}
+		
+		OSTimeDly(OS_TICKS_PER_SEC/100);
 	}
 }
 
-/******************************* uCOS任务Wlan ***********************************/
-#define SBUS_SIGNAL_OK          0x00
-#define SBUS_SIGNAL_LOST        0x01
-#define SBUS_SIGNAL_FAILSAFE    0x03
-//sbus数据结构
-typedef struct
-{
-	INT8U DataHead;
-	INT8U Data[22];
-	INT8U DataTag;
-	INT8U DataEnd;
-}SbusDataTypeDef;
-//AD转换过来的数据结构
-typedef struct
-{
-	INT16U channels[18];
-	INT8U  failsafe_status;
-}ADCDataTypeDef;
+/******************************* uCOS任务Key ***********************************/
+int keythreeSt1=0,keythreeSt2=0;
 
-//将AD数据转成SBUS数据
-SbusDataTypeDef SbusIn(ADCDataTypeDef ADCData)
+void TaskKey(void *pdata)
 {
-	SbusDataTypeDef sbusData;
-	
-	sbusData.DataHead=0xf0;//HEAD
-	sbusData.DataEnd=0;//END
-	
-	sbusData.Data[0]=ADCData.channels[0]>>3  & 0xFF;
-	sbusData.Data[1]=(ADCData.channels[0]<<5 | ADCData.channels[1]>>6)  & 0xFF;
-	sbusData.Data[2]=(ADCData.channels[1]<<2 | ADCData.channels[2]>>9)  & 0xFF;
-	sbusData.Data[3]=(ADCData.channels[2]<<1 )  & 0xFF;
-	sbusData.Data[4]=(ADCData.channels[2]<<7 | ADCData.channels[3]>>4)  & 0xFF;
-	sbusData.Data[5]=(ADCData.channels[3]<<4 | ADCData.channels[4]>>7)  & 0xFF;
-	sbusData.Data[6]=(ADCData.channels[4]<<1 | ADCData.channels[5]>>10)  & 0xFF;
-	sbusData.Data[7]=(ADCData.channels[5]>>2 )  & 0xFF;
-	sbusData.Data[8]=(ADCData.channels[5]<<6 | ADCData.channels[6]>>5)  & 0xFF;
-	sbusData.Data[9]=(ADCData.channels[6]<<3 | ADCData.channels[7]>>8)  & 0xFF;
-	sbusData.Data[10]=(ADCData.channels[7])  & 0xFF;
-	
-	sbusData.Data[11]=ADCData.channels[8]>>3  & 0xFF;
-	sbusData.Data[12]=(ADCData.channels[8]<<5 | ADCData.channels[9]>>6)  & 0xFF;
-	sbusData.Data[13]=(ADCData.channels[9]<<2 | ADCData.channels[10]>>9)  & 0xFF;
-	sbusData.Data[14]=(ADCData.channels[10]<<1 )  & 0xFF;
-	sbusData.Data[15]=(ADCData.channels[10]<<7 | ADCData.channels[11]>>4)  & 0xFF;
-	sbusData.Data[16]=(ADCData.channels[11]<<4 | ADCData.channels[12]>>7)  & 0xFF;
-	sbusData.Data[17]=(ADCData.channels[12]<<1 | ADCData.channels[13]>>10)  & 0xFF;
-	sbusData.Data[18]=(ADCData.channels[13]>>2 )  & 0xFF;
-	sbusData.Data[19]=(ADCData.channels[13]<<6 | ADCData.channels[14]>>5)  & 0xFF;
-	sbusData.Data[20]=(ADCData.channels[14]<<3 | ADCData.channels[15]>>8)  & 0xFF;
-	sbusData.Data[21]=(ADCData.channels[15])  & 0xFF;
-	
-	sbusData.DataTag=(ADCData.channels[16] |(ADCData.channels[17]<<1)|(ADCData.failsafe_status<<2)) & 0xFF;
-	
-	return sbusData;
-}
-
-//讲SBUS数据转成AD数据
-ADCDataTypeDef SbusOut(INT8U *sbusData)
-{
-	ADCDataTypeDef ADCData;
-	
-	ADCData.channels[0]  = ((sbusData[1]|sbusData[2]<< 8) & 0x07FF);
-  ADCData.channels[1]  = ((sbusData[2]>>3|sbusData[3]<<5) & 0x07FF);
-  ADCData.channels[2]  = ((sbusData[3]>>6|sbusData[4]<<2|sbusData[5]<<10) & 0x07FF);
-  ADCData.channels[3]  = ((sbusData[5]>>1|sbusData[6]<<7) & 0x07FF);
-  ADCData.channels[4]  = ((sbusData[6]>>4|sbusData[7]<<4) & 0x07FF);
-  ADCData.channels[5]  = ((sbusData[7]>>7|sbusData[8]<<1|sbusData[9]<<9) & 0x07FF);
-  ADCData.channels[6]  = ((sbusData[9]>>2|sbusData[10]<<6) & 0x07FF);
-  ADCData.channels[7]  = ((sbusData[10]>>5|sbusData[11]<<3) & 0x07FF); // & the other 8 + 2 channels if you need them
-  ADCData.channels[8]  = ((sbusData[12]|sbusData[13]<< 8) & 0x07FF);
-  ADCData.channels[9]  = ((sbusData[13]>>3|sbusData[14]<<5) & 0x07FF);
-  ADCData.channels[10] = ((sbusData[14]>>6|sbusData[15]<<2|sbusData[16]<<10) & 0x07FF);
-  ADCData.channels[11] = ((sbusData[16]>>1|sbusData[17]<<7) & 0x07FF);
-  ADCData.channels[12] = ((sbusData[17]>>4|sbusData[18]<<4) & 0x07FF);
-  ADCData.channels[13] = ((sbusData[18]>>7|sbusData[19]<<1|sbusData[20]<<9) & 0x07FF);
-  ADCData.channels[14] = ((sbusData[20]>>2|sbusData[21]<<6) & 0x07FF);
-  ADCData.channels[15] = ((sbusData[21]>>5|sbusData[22]<<3) & 0x07FF);
-
-  // DigiChannel 1
-  if (sbusData[23] & (1<<0)) {
-    ADCData.channels[16] = 1;
-  }
-  else{
-    ADCData.channels[16] = 0;
-  }
-  // DigiChannel 2
-  if (sbusData[23] & (1<<1)) {
-    ADCData.channels[17] = 1;
-  }
-  else{
-    ADCData.channels[17] = 0;
-  }
-  // Failsafe
-  ADCData.failsafe_status = SBUS_SIGNAL_OK;
-  if (sbusData[23] & (1<<2)) {
-    ADCData.failsafe_status = SBUS_SIGNAL_LOST;
-  }
-  if (sbusData[23] & (1<<3)) {
-    ADCData.failsafe_status = SBUS_SIGNAL_FAILSAFE;
-  }
-	
-	return ADCData;
-}
-
-void TaskWlan(void *pdata)
-{
-	
+	KeyStatus st;
+		
 	while(1)
 	{
-		OSTimeDly(OS_TICKS_PER_SEC/10);
+		st=ReadKeyStatus(KEY_A_GPIO,KEY_A,&keyAst);
+		if(st==ContiousKeyDownStatus)
+		{
+			sbusData[2]=7;
+			sbusData[3]=3;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		else if(st==OnceKeyDownStatus)
+		{
+			sbusData[2]=7;
+			sbusData[3]=2;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		st=ReadKeyStatus(KEY_B_GPIO,KEY_B,&keyBst);
+		if(st==OnceKeyDownStatus)
+		{
+			sbusData[2]=8;
+			sbusData[3]=2;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		else if(st==ContiousKeyDownStatus)
+		{
+			sbusData[2]=8;
+			sbusData[3]=3;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		st=ReadKeyStatus(KEY_OKF_GPIO,KEY_OKF,&keyOKFst);
+		if(st==OnceKeyDownStatus)
+		{
+			sbusData[2]=4;
+			sbusData[3]=2;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		else if(st==ContiousKeyDownStatus)
+		{
+			sbusData[2]=4;
+			sbusData[3]=3;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		st=ReadKeyStatus(KEY_HOME_GPIO,KEY_HOME,&keyHOMEst);
+		if(st==OnceKeyDownStatus)
+		{
+			sbusData[2]=3;
+			sbusData[3]=2;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		else if(st==ContiousKeyDownStatus)
+		{
+			sbusData[2]=3;
+			sbusData[3]=3;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		st=ReadKeyStatus(KEY_PHOTO_GPIO,KEY_PHOTO,&keyPHOTOst);
+		if(st==OnceKeyDownStatus)
+		{
+			sbusData[2]=5;
+			sbusData[3]=2;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		else if(st==ContiousKeyDownStatus)
+		{
+			sbusData[2]=5;
+			sbusData[3]=3;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		st=ReadKeyStatus(KEY_VIDEO_GPIO,KEY_VIDEO,&keyVIDEOst);
+		if(st==OnceKeyDownStatus)
+		{
+			sbusData[2]=6;
+			sbusData[3]=2;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		else if(st==ContiousKeyDownStatus)
+		{
+			sbusData[2]=6;
+			sbusData[3]=3;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+		}
+		
+		if(GPIO_ReadInputDataBit(KEY_THREE_GPIO,KEY_NEWHAND)==0)
+		{
+			keythreeSt2=1;
+		}
+		else if(GPIO_ReadInputDataBit(KEY_THREE_GPIO,KEY_AE)==0)
+		{
+			keythreeSt2=2;
+		}
+		else if(GPIO_ReadInputDataBit(KEY_THREE_GPIO,KEY_VIO)==0)
+		{
+			keythreeSt2=3;
+		}
+		if(keythreeSt2!= keythreeSt1)
+		{
+			sbusData[2]=2;
+			sbusData[3]=keythreeSt2;
+			sbusData[4]=checksum8(sbusData,4);
+			RS485Send(1,sbusData,5);
+			keythreeSt1 = keythreeSt2;
+		}
+		OSTimeDly(OS_TICKS_PER_SEC/200);
 	}
 }
 
@@ -307,7 +369,7 @@ void TaskUSBHID(void *pdata)
 		//1,updata
 		//2,japan,america,china
 		//3,摇杆校准
-		OSTimeDly(OS_TICKS_PER_SEC/5);
+		OSTimeDly(OS_TICKS_PER_SEC);
 	}
 }
 
@@ -315,17 +377,25 @@ void TaskUSBHID(void *pdata)
 /********************************* Main函数 *************************************/
 int main(void)
 {
+#ifdef JKB_SW_H
+	SCB->VTOR = FLASH_BASE | 0x10000; /* Vector Table Relocation in Internal FLASH. */
+#endif
 	/* 配置系统时钟为72M */ 
-	SystemInit();
+//	SystemInit();
 	/******************************** 中断向量初始化 ****************************/	
-	NVIC_Configuration();
+	NVIC_Configuration();//boot要修改flash地址
 	/****************************** GPIO恢复到默认配置 **************************/	
 	GPIO_DeIntConfiguration();
   /******************************** uCOS-II初始化 *****************************/
   OSInit();
-  /******************************** LED初始化 *********************************/
+  /******************************** 硬件初始化 *********************************/
 	LedBeepInit();
-	//rs485_2_Init(9600,UART_CONFIG_PAR_NONE);
+	beepInit(0x3800,0);
+	key_IO_Init();
+	//sbus传输初始化
+	rs485_1_Init(9600,USART_Parity_No);
+	stm32_adc1_init();
+		
   /******************************** 创建启动任务 ******************************/
     OSTaskCreateExt(TaskStart,
                     (void *)0,
@@ -337,7 +407,7 @@ int main(void)
                     (void *)0,
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
     /******************************** 使能系统节拍 ******************************/
-    SysTick_Config(SystemCoreClock / 1000 *5);
+    SysTick_Config(SystemCoreClock / 1000);
     /******************************** 开始多任务 ******************************/
     OSStart();
 

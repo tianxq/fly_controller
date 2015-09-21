@@ -211,6 +211,7 @@ static void SetSysClock(void);
   */
 void SystemInit (void)
 {
+#if 1
   /* Reset the RCC clock configuration to the default reset state(for debug purpose) */
   /* Set HSION bit */
   RCC->CR |= (uint32_t)0x00000001;
@@ -266,6 +267,8 @@ void SystemInit (void)
 #else
   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH. */
 #endif 
+
+#endif
 }
 
 /**

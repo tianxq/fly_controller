@@ -1,12 +1,13 @@
 ..\output\rs485.o: ..\Bsp\RS485.c
 ..\output\rs485.o: ..\App\includes.h
 ..\output\rs485.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
-..\output\rs485.o: ..\FWlib\inc\stm32f10x_dbgmcu.h
+..\output\rs485.o: ..\FWlib\inc\stm32f10x_adc.h
 ..\output\rs485.o: ..\CMSIS\stm32f10x.h
 ..\output\rs485.o: ..\CMSIS\core_cm3.h
 ..\output\rs485.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 ..\output\rs485.o: ..\CMSIS\system_stm32f10x.h
 ..\output\rs485.o: ..\Bsp\stm32f10x_conf.h
+..\output\rs485.o: ..\FWlib\inc\stm32f10x_dbgmcu.h
 ..\output\rs485.o: ..\FWlib\inc\stm32f10x_dma.h
 ..\output\rs485.o: ..\FWlib\inc\stm32f10x_exti.h
 ..\output\rs485.o: ..\FWlib\inc\stm32f10x_flash.h
@@ -28,3 +29,7 @@
 ..\output\rs485.o: ..\App\includes.h
 ..\output\rs485.o: ..\Bsp\rs485.h
 ..\output\rs485.o: ..\Bsp\FIFO_App.h
+..\output\rs485.o: ..\Bsp\led.h
+..\output\rs485.o: ..\Bsp\sbus.h
+..\output\rs485.o: ..\Bsp\adc.h
+..\output\rs485.o: ..\Bsp\key.h
