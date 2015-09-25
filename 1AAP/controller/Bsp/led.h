@@ -2,19 +2,21 @@
 
 /********************************* LED³õÊ¼»¯ *************************************/
 #define LED_GPIO    GPIOB
-#define BEEP_GPIO   GPIOA
-#define MOTO_GPIO   GPIOB
+//#define BEEP_GPIO   GPIOA
+#define MOTO_GPIO   GPIOA
+
 #define LED_RCC     RCC_APB2Periph_GPIOB
-#define BEEP_RCC    RCC_APB2Periph_GPIOA
-#define MOTO_RCC    RCC_APB2Periph_GPIOB
+//#define BEEP_RCC    RCC_APB2Periph_GPIOA
+#define MOTO_RCC    RCC_APB2Periph_GPIOA
+
 #define LED_X_G       GPIO_Pin_6
 #define LED_X_R       GPIO_Pin_7
 #define LED_GPS_G     GPIO_Pin_4
 #define LED_GPS_R     GPIO_Pin_5
 #define LED_CH_G      GPIO_Pin_8
 #define LED_CH_R      GPIO_Pin_9
-#define BEEP        GPIO_Pin_7
-#define MOTO        GPIO_Pin_12
+//#define BEEP        GPIO_Pin_7
+#define MOTO        GPIO_Pin_7
 
 #define CHG_ERR     GPIO_Pin_0
 #define CHG_STA     GPIO_Pin_1
@@ -34,16 +36,18 @@
 #define LedOn(X)     GPIO_ResetBits(LED_GPIO, X);
 #define LedOff(X)    GPIO_SetBits(LED_GPIO, X);
 
-#define BeepOn()     TIM_SetCompare2(TIM3, 128);//TIM3 -> CCER  |= 1<<4; 
-#define BeepOff()    TIM_SetCompare2(TIM3, 0);//TIM3 -> CCER &= 0XFFEF; 
+//#define BeepOn()     TIM_SetCompare2(TIM3, 128);//TIM3 -> CCER  |= 1<<4; 
+//#define BeepOff()    TIM_SetCompare2(TIM3, 0);//TIM3 -> CCER &= 0XFFEF; 
 
-#define MotoOn(X)     TIM_Cmd(TIM3, ENABLE);
-#define MotoOff(X)    TIM_Cmd(TIM3, DISABLE);
+#define MotoOn()     TIM_CCxCmd(TIM3,TIM_Channel_2,ENABLE);//TIM_SetCompare2(TIM3, 50);
+#define MotoOff()    TIM_CCxCmd(TIM3,TIM_Channel_2,DISABLE);//TIM_SetCompare2(TIM3, 100);
+
+extern uint8_t ledXstate,ledGPSstate,ledCHstate;//µÆ×´Ì¬
+extern uint8_t motostate;
+extern uint8_t keythreeSt1,keythreeSt2;
 
 
-
-
-void LedBeepInit(void);
-void beepInit(uint32_t arr,uint16_t psc);
-
+void ledInit(void);
+//void beepInit(uint32_t arr,uint16_t psc);
+void motoInit(uint16_t arr,uint16_t psc);
 

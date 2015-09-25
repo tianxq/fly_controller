@@ -6,6 +6,7 @@ KeyStatusTypeDef keyOKFst;
 KeyStatusTypeDef keyHOMEst;
 KeyStatusTypeDef keyPHOTOst;
 KeyStatusTypeDef keyVIDEOst;
+
 /********************************* 按键初始化 *************************************/
 void key_IO_Init(void)
 {
@@ -107,7 +108,7 @@ KeyStatus  ReadKeyStatus(GPIO_TypeDef* keyGPIO,uint16_t keyGPIOPin,
 	
 	switch(key->state)  
 	{   
-		case  NoKeyDownStatus:    
+		case  NoKeyDownStatus: 
 			if(!KeyPress)     
 			{       
 				key->state = KeySureDownStatus;      
@@ -138,16 +139,19 @@ KeyStatus  ReadKeyStatus(GPIO_TypeDef* keyGPIO,uint16_t keyGPIOPin,
 				key->state = ContiousKeyDownStatus;       
 				key->TimeCount = 0;        
 				//KeyReturn = ContiousKeyDownStatus;  
-				KeyReturn = NoKeyDownStatus;				
+				KeyReturn = NoKeyDownStatus;
+				motostate=1;
 			}      
 			break; 
 
-			case ContiousKeyDownStatus:    
+			case ContiousKeyDownStatus:
+				//motostate=1;				
 				if(KeyPress)    
 				{      
 					key->state = NoKeyDownStatus;        
 					//KeyReturn = NoKeyDownStatus;
 					KeyReturn = ContiousKeyDownStatus;
+					//motostate=0;
 				}     
 				/*-循环持续长按判断，一直按不停-*/   
 				else if(++key->TimeCount>10)    
@@ -159,7 +163,7 @@ KeyStatus  ReadKeyStatus(GPIO_TypeDef* keyGPIO,uint16_t keyGPIOPin,
 				/**/       
 				else        
 				{ 
-					KeyReturn = NoKeyDownStatus;    
+					KeyReturn = NoKeyDownStatus;  
 				}     
 				break;   
 		}   

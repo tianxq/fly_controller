@@ -42,6 +42,7 @@ extern KeyStatusTypeDef keyHOMEst;
 extern KeyStatusTypeDef keyPHOTOst;
 extern KeyStatusTypeDef keyVIDEOst;
 
+
 //static KeyStatus state = NoKeyDownStatus;      
 
 

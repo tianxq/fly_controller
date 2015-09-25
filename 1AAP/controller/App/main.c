@@ -15,14 +15,16 @@
 #define		Task_Start_Size		100
 #define   Task_LedBeep_Stk_Size 50
 #define   Task_ADC_Stk_Size     100
-#define   Task_Key_Stk_Size    1000
-#define   Task_USBHID_Stk_Size    100
+#define   Task_Key_Stk_Size    100
+#define   Task_Uart_Stk_Size    100
+#define   Task_USBHID_Stk_Size    500
 
 //定义uCOS任务优先级
 #define		Task_Start_Prio			15
 #define   Task_LedBeep_Prio   12
 #define   Task_ADC_Prio       2
 #define   Task_Key_Prio      1
+#define   Task_Uart_Prio      4
 #define   Task_USBHID_Prio    3
 
 //sbus数据
@@ -30,11 +32,13 @@ uint8_t  sbusData[17]={0x5a,0xa5};
 uint16_t BatteryVoltage;//The battery voltage
 
 
+
 //定义uCOS任务堆栈
 OS_STK		Task_Start[Task_Start_Size];
 OS_STK		Task_LedBeep_Stk[Task_LedBeep_Stk_Size];
 OS_STK		Task_ADC_Stk[Task_ADC_Stk_Size];
 OS_STK		Task_Key_Stk[Task_Key_Stk_Size];
+OS_STK		Task_Uart_Stk[Task_Uart_Stk_Size];
 OS_STK		Task_USBHID_Stk[Task_USBHID_Stk_Size];
 
 
@@ -43,6 +47,7 @@ void TaskStart(void *pdata);
 void TaskLedBeep(void *pdata);
 void TaskADC(void *pdata);
 void TaskKey(void *pdata);
+void TaskUart(void *pdata);
 void TaskUSBHID(void *pdata);
 
 /////////////////////////////////////////////////////////////////////////
@@ -115,6 +120,15 @@ void TaskStart(void *pdata)
                     Task_Key_Stk_Size,
                     (void *)0,
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
+			OSTaskCreateExt(TaskUart,
+                    (void *)0,
+                    &Task_Uart_Stk[Task_Uart_Stk_Size - 1],
+                    Task_Uart_Prio,
+                    Task_Uart_Prio,
+                    &Task_Uart_Stk[0],
+                    Task_Uart_Stk_Size,
+                    (void *)0,
+                    OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
 			OSTaskCreateExt(TaskUSBHID,
                     (void *)0,
                     &Task_USBHID_Stk[Task_USBHID_Stk_Size - 1],
@@ -134,13 +148,21 @@ void TaskStart(void *pdata)
 
 
 /********************************* uCOS任务Led *************************************/
-INT8U ledXstate=0,ledGPSstate=0,ledCHstate=0;//灯状态
 void TaskLedBeep(void *pdata)
 {
 
 	INT32U testtime;
 	while(1)
 	{
+		//马达
+		if(motostate==1)
+		{
+			MotoOn();
+			motostate=0;
+		}
+		else
+			MotoOff();
+		
 		//判断显示灯状态
 		if(ledXstate)
 		{
@@ -166,24 +188,27 @@ void TaskLedBeep(void *pdata)
 		if(!GPIO_ReadInputDataBit(CHG_GPIO,CHG_ERR) 
 			&& GPIO_ReadInputDataBit(CHG_GPIO,CHG_STA))
 		{
-			LedOn(LED_CH_R);
-			LedOff(LED_CH_G);
+				LedOn(LED_CH_R);
+				LedOff(LED_CH_G);
 		}
 		else
 		{
-			LedOn(LED_CH_G);
-			LedOff(LED_CH_R);
-		}
+			if(ledCHstate==1)
+			{
+				LedOn(LED_CH_G);
+				LedOff(LED_CH_R);
+			}
+			else 
+			{
+				LedOn(LED_CH_R);
+				LedOff(LED_CH_G);
+				OSTimeDly(OS_TICKS_PER_SEC/20);
+				LedOff(LED_CH_R);
+			}
 
-		//蜂鸣器
-//		BeepOn();
-//		OSTimeDly(OS_TICKS_PER_SEC/50);
-//		BeepOff();
+		}
 		
-		//马达
-		MotoOn(MOTO);
-		
-		OSTimeDly(OS_TICKS_PER_SEC/2);
+		OSTimeDly(OS_TICKS_PER_SEC/20);
 	}
 }
 
@@ -209,7 +234,7 @@ void TaskADC(void *pdata)
 			ADResults[i]=average_filter(&ADtoFilter[i][0]);
 		}
 				
-		for(i=0;i<CHANNEL_NUM;i++)
+		for(i=0;i<CHANNEL_NUM-1;i++)
 		{
 			ADResults[i]=ADResults[i]>>1;
 		}
@@ -218,11 +243,12 @@ void TaskADC(void *pdata)
 		memcpy(sbusData+4,ADResults,12);
 		
 		sbusData[16]=checksum8(sbusData,16);
+		//每10ms发送一次AD
 		//RS485Send(1,sbusData,17);
 		
 		BatteryVoltage=ADResults[6];
 		
-		if(BatteryVoltage< 0x700)
+		if(BatteryVoltage< 0x8c0)//低于3.6v
 		{
 			ledCHstate=0;
 	  }
@@ -236,8 +262,6 @@ void TaskADC(void *pdata)
 }
 
 /******************************* uCOS任务Key ***********************************/
-int keythreeSt1=0,keythreeSt2=0;
-
 void TaskKey(void *pdata)
 {
 	KeyStatus st;
@@ -359,6 +383,27 @@ void TaskKey(void *pdata)
 	}
 }
 
+/********************************* uCOS任务	Uart *************************************/
+void TaskUart(void *pdata)
+{
+	uint8_t test[16],len;
+	while(1)
+	{
+		if(nCom1.nBuff.UsartRxBuff[0]==0x11)
+		{
+				ledXstate=1;
+				nCom1.nBuff.UsartRxBuff[0]=0;
+		}
+		else if(nCom1.nBuff.UsartRxBuff[0]==0x10)
+		{
+				ledXstate=0;
+				nCom1.nBuff.UsartRxBuff[0]=0;
+		}
+		
+		OSTimeDly(OS_TICKS_PER_SEC/20);
+	}
+}
+
 /********************************* uCOS任务	USBHID *************************************/
 void TaskUSBHID(void *pdata)
 {
@@ -389,11 +434,11 @@ int main(void)
   /******************************** uCOS-II初始化 *****************************/
   OSInit();
   /******************************** 硬件初始化 *********************************/
-	LedBeepInit();
-	beepInit(0x3800,0);
+	ledInit();
+	motoInit(14400,0);
 	key_IO_Init();
 	//sbus传输初始化
-	rs485_1_Init(9600,USART_Parity_No);
+	rs485_1_Init(115200,UART_CONFIG_PAR_EVEN);
 	stm32_adc1_init();
 		
   /******************************** 创建启动任务 ******************************/

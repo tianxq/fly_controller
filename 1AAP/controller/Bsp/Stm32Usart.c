@@ -84,6 +84,7 @@ unsigned char ComPort1Init(uint32_t Bps,uint16_t Party)//ComPort1Init()
 	nCom1.nGpioPort.nGPIO_Tx		= GPIO_Pin_9;				//串口发送引脚
 	
 	//串口通讯参数
+	
 	nCom1.nUsartBase.nBaudRate		= Bps;						//串口波特率	CBR_115200
 	nCom1.nUsartBase.nStopBits		= 1;						//停止位
 	switch(Party)
@@ -127,7 +128,7 @@ unsigned char ComPort1Init(uint32_t Bps,uint16_t Party)//ComPort1Init()
 	
 	//启动串口1接收
 	StartUsartDMARx(&nCom1);	
-
+	
 	return 1;
 }
 
@@ -430,7 +431,7 @@ void UsartInitDMA(UsartInfo *info)
 	}
 
     //GPIO时钟使能
-    RCC_APB2PeriphClockCmd(info->nGpioPort.nRCC_GPIORxTx | RCC_APB2Periph_AFIO, ENABLE);
+  RCC_APB2PeriphClockCmd(info->nGpioPort.nRCC_GPIORxTx | RCC_APB2Periph_AFIO, ENABLE);
 	if(info->nCom == USART1)
 	{
 		RCC_APB2PeriphClockCmd(info->nUsartHalPara.nRCC_USART, ENABLE);
@@ -452,7 +453,7 @@ void UsartInitDMA(UsartInfo *info)
     GPIO_Init(info->nGpioPort.nRxTxPort, &GPIO_InitStructure);
 			
 	//中断优先级配置
-    NVIC_SetPriorityGrouping(6); 
+    NVIC_SetPriorityGrouping(NVIC_PriorityGroup_2); 
     
 	//DMA发送通道初始化
     NVIC_SetPriority(info->nUsartDma.nDMATxIRQ, 0x01); 
@@ -467,7 +468,7 @@ void UsartInitDMA(UsartInfo *info)
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-	NVIC_Init(&NVIC_InitStructure);
+		NVIC_Init(&NVIC_InitStructure);
 
 	//串口DMA发送配置
     DMA_DeInit(info->nUsartDma.nDMATxChannel);
@@ -538,6 +539,7 @@ void UsartInitDMA(UsartInfo *info)
 	
 	//使能串口空闲中断
 	USART_ITConfig(info->nCom, USART_IT_IDLE, ENABLE);
+	//USART_ITConfig(info->nCom, USART_IT_RXNE, ENABLE);
 
 }
 

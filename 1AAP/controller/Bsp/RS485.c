@@ -11,12 +11,12 @@ void rs485_1_Init(uint32_t bps,uint16_t Parity)
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
 	/* GPIO clock enable */
-	RCC_APB2PeriphClockCmd(RS4851_GPIO_CLK, ENABLE);
-	
-	GPIO_InitStructure.GPIO_Pin =  RS4851_GPIO_PIN;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-	GPIO_Init(RS4851_GPIO_PORT, &GPIO_InitStructure);
+//	RCC_APB2PeriphClockCmd(RS4851_GPIO_CLK, ENABLE);
+//	
+//	GPIO_InitStructure.GPIO_Pin =  RS4851_GPIO_PIN;
+//	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+//	GPIO_Init(RS4851_GPIO_PORT, &GPIO_InitStructure);
 	
 	ComPort1Init(bps,Parity);
 	RS4851TXDISABLE();

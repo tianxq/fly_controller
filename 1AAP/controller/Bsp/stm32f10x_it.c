@@ -145,17 +145,19 @@ void SysTick_Handler(void)
 /*  available peripheral interrupt handler's name please refer to the startup */
 /*  file (startup_stm32f10x_xx.s).                                            */
 /******************************************************************************/
-#if 1	//串口1用作PSAM
+#if 1	//串口1
 /***************************** USART1中断服务 *********************************/
 void USART1_IRQHandler(void)
 {
+
 	uint8_t NewData = 0;
     OS_CPU_SR  cpu_sr;
 
 	NewData = NewData;
-    OS_ENTER_CRITICAL();
-    OSIntNesting++;
-    OS_EXIT_CRITICAL();
+	OS_ENTER_CRITICAL();
+	OSIntNesting++;
+	OS_EXIT_CRITICAL();
+
 
 	if(USART_GetITStatus(USART1, USART_IT_IDLE) != RESET)
 	{
@@ -164,52 +166,35 @@ void USART1_IRQHandler(void)
 		NewData = USART1->DR;
 		NewData = 1;
 
-		UsartDMARx(&nCom1);		
-	}	
-	
+		UsartDMARx(&nCom1);
+	}
     OSIntExit();
+
+		/*********
+	uint8_t NewData = 0;
+    OS_CPU_SR  cpu_sr;
+
+	NewData = NewData;
+    OS_ENTER_CRITICAL();
+    OSIntNesting++;
+    OS_EXIT_CRITICAL();
+		
+     if(USART_GetITStatus(USART1, USART_IT_RXNE )==SET)//????
+     {
+             USART_ClearITPendingBit(USART1,USART_IT_RXNE);
+             NewData = USART_ReceiveData(USART1); 
+             if(NewData!=0)
+             {
+                    //Usart1RXArray[Usart1RXLen++]=RxData;
+             }
+     }
+		
+    OSIntExit();	
+		********************/
 } 
 
-
 #else	//
-void SC_USART_IRQHandler(void)
-{
-    /* If a Frame error is signaled by the card */
-    if(USART_GetITStatus(SC_USART, USART_IT_FE) != RESET)
-    {
-        USART_ReceiveData(SC_USART);
 
-        /* Resend the byte that failed to be received (by the Smartcard) correctly */
-        SC_ParityErrorHandler();
-    }
-
-    /* If the SC_USART detects a parity error */
-    if(USART_GetITStatus(SC_USART, USART_IT_PE) != RESET)
-    {
-        /* Enable SC_USART RXNE Interrupt (until receiving the corrupted byte) */
-        USART_ITConfig(SC_USART, USART_IT_RXNE, ENABLE);
-        /* Flush the SC_USART DR register */
-        USART_ReceiveData(SC_USART);
-    }
-
-    if(USART_GetITStatus(SC_USART, USART_IT_RXNE) != RESET)
-    {
-        /* Disable SC_USART RXNE Interrupt */
-        USART_ITConfig(SC_USART, USART_IT_RXNE, DISABLE);
-        USART_ReceiveData(SC_USART);
-    }
-
-    /* If a Overrun error is signaled by the card */
-    if(USART_GetITStatus(SC_USART, USART_IT_ORE) != RESET)
-    {
-        USART_ReceiveData(SC_USART);
-    }
-    /* If a Noise error is signaled by the card */
-    if(USART_GetITStatus(SC_USART, USART_IT_NE) != RESET)
-    {
-        USART_ReceiveData(SC_USART);
-    }
-}
 #endif
 
 /***************************** USART2中断服务 *********************************/
