@@ -64,6 +64,15 @@
 #include "sbus.h"
 #include "adc.h"
 #include "key.h"
+#include "usbHID.h"
+#include "usb_lib.h"
+//#include "usb_desc.h"
+//#include "usb_pwr.h"
+//#include "usb_prop.h"
+//#include "usb_endp.h"
+//#include "usb_istr.h"
+//#include "platform_config.h"
+#include "hw_config.h"
 
 // π”√bootload
 //#define JKB_SW_H

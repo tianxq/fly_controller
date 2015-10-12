@@ -33,3 +33,15 @@
 ..\output\sbus.o: ..\Bsp\sbus.h
 ..\output\sbus.o: ..\Bsp\adc.h
 ..\output\sbus.o: ..\Bsp\key.h
+..\output\sbus.o: ..\Bsp\usbHID.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_lib.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_type.h
+..\output\sbus.o: ..\Bsp\usb_conf.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_regs.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_def.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_core.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_init.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_mem.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_int.h
+..\output\sbus.o: ..\STM32_USB-FS-Device_Driver\inc\usb_sil.h
+..\output\sbus.o: ..\Bsp\hw_config.h

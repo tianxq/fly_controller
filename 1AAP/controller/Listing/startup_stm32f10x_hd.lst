@@ -54,49 +54,49 @@ ARM Macro Assembler    Page 1
    31 00000000         ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
    32 00000000         ; </h>
    33 00000000         
-   34 00000000 00000200 
+   34 00000000 00000400 
                        Stack_Size
-                               EQU              0x00000200
+                               EQU              0x00000400  ;200
    35 00000000         
    36 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
 =3
    37 00000000         Stack_Mem
                                SPACE            Stack_Size
-   38 00000200         __initial_sp
+   38 00000400         __initial_sp
 
 
 
 ARM Macro Assembler    Page 2 
 
 
-   39 00000200         
-   40 00000200 20000400 
+   39 00000400         
+   40 00000400 20000400 
                        __initial_spTop
                                EQU              0x20000400  ; stack used for Sy
                                                             stemInit_ExtMemCtl
-   41 00000200         ; always internal RAM used 
-   42 00000200         
-   43 00000200         ; <h> Heap Configuration
-   44 00000200         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
-   45 00000200         ; </h>
-   46 00000200         
-   47 00000200 00000000 
+   41 00000400         ; always internal RAM used 
+   42 00000400         
+   43 00000400         ; <h> Heap Configuration
+   44 00000400         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   45 00000400         ; </h>
+   46 00000400         
+   47 00000400 00000200 
                        Heap_Size
-                               EQU              0x00000000
-   48 00000200         
-   49 00000200                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
+                               EQU              0x00000200  ;000
+   48 00000400         
+   49 00000400                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
 3
    50 00000000         __heap_base
    51 00000000         Heap_Mem
                                SPACE            Heap_Size
-   52 00000000         __heap_limit
-   53 00000000         
-   54 00000000                 PRESERVE8
-   55 00000000                 THUMB
-   56 00000000         
-   57 00000000         
-   58 00000000         ; Vector Table Mapped to Address 0 at Reset
-   59 00000000                 AREA             RESET, DATA, READONLY
+   52 00000200         __heap_limit
+   53 00000200         
+   54 00000200                 PRESERVE8
+   55 00000200                 THUMB
+   56 00000200         
+   57 00000200         
+   58 00000200         ; Vector Table Mapped to Address 0 at Reset
+   59 00000200                 AREA             RESET, DATA, READONLY
    60 00000000                 EXPORT           __Vectors
    61 00000000                 EXPORT           __Vectors_End
    62 00000000                 EXPORT           __Vectors_Size
@@ -568,8 +568,8 @@ ARM Macro Assembler    Page 9
   357 00000024         
   358 00000024 4805            LDR              R0, =  Heap_Mem
   359 00000026 4906            LDR              R1, =(Stack_Mem + Stack_Size)
-  360 00000028 4A04            LDR              R2, = (Heap_Mem +  Heap_Size)
-  361 0000002A 4B06            LDR              R3, = Stack_Mem
+  360 00000028 4A06            LDR              R2, = (Heap_Mem +  Heap_Size)
+  361 0000002A 4B07            LDR              R3, = Stack_Mem
   362 0000002C 4770            BX               LR
   363 0000002E         
   364 0000002E 00 00           ALIGN
@@ -581,14 +581,15 @@ ARM Macro Assembler    Page 9
               00000000 
               00000000 
               00000000 
+              00000400 
               00000200 
-              00000000 
 
 
 
 ARM Macro Assembler    Page 10 
 
 
+              00000000 
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=..\outpu
 t\startup_stm32f10x_hd.d -o..\output\startup_stm32f10x_hd.o -IC:\Keil\ARM\RV31\
 INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\ST\STM32F10x --predefine="__E
@@ -617,7 +618,7 @@ Symbol: Stack_Mem
       At line 359 in file ..\CMSIS\startup\startup_stm32f10x_hd.s
       At line 361 in file ..\CMSIS\startup\startup_stm32f10x_hd.s
 
-__initial_sp 00000200
+__initial_sp 00000400
 
 Symbol: __initial_sp
    Definitions
@@ -657,7 +658,7 @@ Symbol: __heap_base
    Uses
       None
 Comment: __heap_base unused
-__heap_limit 00000000
+__heap_limit 00000200
 
 Symbol: __heap_limit
    Definitions
@@ -1441,7 +1442,7 @@ Comment: __user_initial_stackheap used once
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Absolute symbols
 
-Heap_Size 00000000
+Heap_Size 00000200
 
 Symbol: Heap_Size
    Definitions
@@ -1450,7 +1451,7 @@ Symbol: Heap_Size
       At line 51 in file ..\CMSIS\startup\startup_stm32f10x_hd.s
       At line 360 in file ..\CMSIS\startup\startup_stm32f10x_hd.s
 
-Stack_Size 00000200
+Stack_Size 00000400
 
 Symbol: Stack_Size
    Definitions

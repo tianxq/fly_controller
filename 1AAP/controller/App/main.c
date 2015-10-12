@@ -142,7 +142,7 @@ void TaskStart(void *pdata)
 	
 	while(1)
 	{
-		OSTimeDly(OS_TICKS_PER_SEC*5);
+		OSTimeDly(OS_TICKS_PER_SEC);
 	}
 }
 
@@ -426,14 +426,16 @@ int main(void)
 	SCB->VTOR = FLASH_BASE | 0x10000; /* Vector Table Relocation in Internal FLASH. */
 #endif
 	/* 配置系统时钟为72M */ 
-//	SystemInit();
+	SystemInit();//usb中断必须要？？这个
+
 	/******************************** 中断向量初始化 ****************************/	
 	NVIC_Configuration();//boot要修改flash地址
 	/****************************** GPIO恢复到默认配置 **************************/	
 	GPIO_DeIntConfiguration();
-  /******************************** uCOS-II初始化 *****************************/
+	/******************************** uCOS-II初始化 *****************************/
   OSInit();
   /******************************** 硬件初始化 *********************************/
+	usbHIDInit();
 	ledInit();
 	motoInit(14400,0);
 	key_IO_Init();

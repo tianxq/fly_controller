@@ -23,6 +23,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "includes.h"
 #include "stm32f10x_it.h"
+#include "usb_istr.h"
 //#include "LogicTimer.h"
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -424,42 +425,12 @@ void EXTI2_IRQHandler(void)
   EXTI_ClearITPendingBit(EXTI_Line2);
 }
 
-//无线数据接收FIFO
-#if 0
-Queue QueueRFrxFIFO;
-void EXTI0_IRQHandler(void)
+/****************************************************************************
+**usb
+*****************************************************************************/
+
+void USB_LP_CAN1_RX0_IRQHandler(void)
 {
-
-       /* In order to detect unexpected events during development,
-     it is recommended to set a breakpoint on the following instruction.
-  */
-  RFrxMsg rfrxMsg;
-  unsigned char D_Status;
-  
-  if(EXTI_GetITStatus(EXTI_Line0)!=RESET)
-  {
-    EXTI_ClearITPendingBit(EXTI_Line0);
-    CLI();   //关中断
-    //LED_1_T;
-    
-    D_Status=SpiReadRegister(DeviceStatus);
-    
-    if((D_Status&0x02)!=0x02)
-    {
-      rfrxMsg.rx_len=RFReacPacket(rfrxMsg.rx_data);
-      if(rfrxMsg.rx_len > 0)
-      {
-        InsertQueue(&QueueRFrxFIFO, &rfrxMsg, CopyQueue_RFrxFIFO);
-		//RS485Send(2,rfrxMsg.rx_data,rfrxMsg.rx_len);
-      }
-    }
-    Rx_Mode_Entern();
-    RxFIFOReset();
-    //LED_1_T;
-    SEI();	  //开中断
-  }
-  EXTI_ClearITPendingBit(EXTI_Line0);
+  USB_Istr();
 }
-
-#endif
 /******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/

@@ -33,4 +33,17 @@
 ..\output\stm32f10x_it.o: ..\Bsp\sbus.h
 ..\output\stm32f10x_it.o: ..\Bsp\adc.h
 ..\output\stm32f10x_it.o: ..\Bsp\key.h
+..\output\stm32f10x_it.o: ..\Bsp\usbHID.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_lib.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_type.h
+..\output\stm32f10x_it.o: ..\Bsp\usb_conf.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_regs.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_def.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_core.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_init.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_mem.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_int.h
+..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_sil.h
+..\output\stm32f10x_it.o: ..\Bsp\hw_config.h
 ..\output\stm32f10x_it.o: ..\Bsp\stm32f10x_it.h
+..\output\stm32f10x_it.o: ..\Bsp\usb_istr.h

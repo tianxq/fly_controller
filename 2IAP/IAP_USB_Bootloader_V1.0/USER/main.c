@@ -79,6 +79,7 @@ void RCC_Configuration(void)
     }
   }
 }
+
 /**********************************************************
                            主函数
 **********************************************************/
@@ -93,9 +94,9 @@ int main(void)
 
 	DFU_Button_Config1();	//初始化跳转APP程序按键
 	
-
-	i=RCC_GetSYSCLKSource();
-	RCC_GetClocksFreq( RCC_Clocks);
+//看系统频率
+//	i=RCC_GetSYSCLKSource();
+//	RCC_GetClocksFreq( RCC_Clocks);
 	
 	//if(DFU_Mask_Read() == 1)//修改判断
 	//检测是否进入DFU模式按键，开机没有按下则跳转到APP程序中执行

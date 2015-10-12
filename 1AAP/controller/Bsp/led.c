@@ -109,6 +109,6 @@ void motoInit(uint16_t arr,uint16_t psc)
 
 	TIM_Cmd(TIM3, ENABLE);  
 
-	TIM_SetCompare2(TIM3, 10);//占空比
+	TIM_SetCompare2(TIM3, 1);//占空比
 	MotoOff();
 }

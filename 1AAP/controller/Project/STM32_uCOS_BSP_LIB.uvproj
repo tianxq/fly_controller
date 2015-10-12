@@ -298,7 +298,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x10000</Size>
+                <Size>0x18000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -351,7 +351,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER,</Define>
               <Undefine></Undefine>
-              <IncludePath>..\FWlib\inc;..\CMSIS;..\App;..\Bsp;..\uCOS-II\Source;..\uCOS-II\Config;..\uCOS-II\Ports;..\Bsp\usb</IncludePath>
+              <IncludePath>..\FWlib\inc;..\CMSIS;..\App;..\Bsp;..\uCOS-II\Source;..\uCOS-II\Config;..\uCOS-II\Ports;..\Bsp\usb;..\STM32_USB-FS-Device_Driver\inc;..\STM32_USB-FS-Device_Driver\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -441,6 +441,41 @@
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Bsp\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbHID.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\usbHID.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_desc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\usb_desc.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_endp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\usb_endp.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_istr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\usb_istr.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_prop.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\usb_prop.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\usb_pwr.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\hw_config.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -661,6 +696,61 @@
               <FileName>os_cpu_a.asm</FileName>
               <FileType>2</FileType>
               <FilePath>..\uCOS-II\Ports\os_cpu_a.asm</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>STM32_USB-FS-Device_Driver</GroupName>
+          <Files>
+            <File>
+              <FileName>otgd_fs_cal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\otgd_fs_cal.c</FilePath>
+            </File>
+            <File>
+              <FileName>otgd_fs_dev.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\otgd_fs_dev.c</FilePath>
+            </File>
+            <File>
+              <FileName>otgd_fs_int.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\otgd_fs_int.c</FilePath>
+            </File>
+            <File>
+              <FileName>otgd_fs_pcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\otgd_fs_pcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\usb_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\usb_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_int.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\usb_int.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_mem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\usb_mem.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_regs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\usb_regs.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_sil.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32_USB-FS-Device_Driver\src\usb_sil.c</FilePath>
             </File>
           </Files>
         </Group>
