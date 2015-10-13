@@ -25,7 +25,8 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-uint8_t Receive_Buffer[2];
+uint8_t HIDReceive_Buffer[64];
+uint8_t HIDReceive_Buffer_len;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -38,23 +39,9 @@ uint8_t Receive_Buffer[2];
 *******************************************************************************/
 void EP1_OUT_Callback(void)
 {
-  /* Read recieved data (2 bytes) */  
-  USB_SIL_Read(EP1_OUT, Receive_Buffer);
+  /* Read recieved data (64 bytes) */  
+  HIDReceive_Buffer_len=USB_SIL_Read(EP1_OUT, HIDReceive_Buffer);
   
-  if (Receive_Buffer[0] == 0x01) //handStyle=0;
-  {
-		handStyle=Receive_Buffer[1];
-  }
-  else if (Receive_Buffer[0] == 0x02)//calibration=0;Ò¡¸ËÐ£×¼=1
-  {
-		if(Receive_Buffer[0]==1)
-			calibration=1;
-  }
-  else if (Receive_Buffer[0] == 0x03)
-	{
-			if(Receive_Buffer[0]==1)
-				usbSetup=1;
-	}
 }
 
 /******************* (C) COPYRIGHT 2010 STMicroelectronics *****END OF FILE****/

@@ -297,8 +297,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x8000000</StartAddress>
-                <Size>0x18000</Size>
+                <StartAddress>0x8010000</StartAddress>
+                <Size>0xfc000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -476,6 +476,11 @@
               <FileName>hw_config.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Bsp\hw_config.c</FilePath>
+            </File>
+            <File>
+              <FileName>flash_in_stm32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\flash_in_stm32.c</FilePath>
             </File>
           </Files>
         </Group>

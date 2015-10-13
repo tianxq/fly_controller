@@ -1,5 +1,0 @@
--c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\FWlib\inc -I..\CMSIS -I..\App -I..\Bsp -I..\uCOS-II\Source -I..\uCOS-II\Config -I..\uCOS-II\Ports -I..\Bsp\usb -I..\STM32_USB-FS-Device_Driver\inc -I..\STM32_USB-FS-Device_Driver\src
--I C:\Keil\ARM\RV31\INC
--I C:\Keil\ARM\CMSIS\Include
--I C:\Keil\ARM\Inc\ST\STM32F10x
--DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o ..\output\usb_endp.o --omf_browse ..\output\usb_endp.crf --depend ..\output\usb_endp.d "..\Bsp\usb_endp.c"

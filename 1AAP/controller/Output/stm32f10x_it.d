@@ -45,5 +45,6 @@
 ..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_int.h
 ..\output\stm32f10x_it.o: ..\STM32_USB-FS-Device_Driver\inc\usb_sil.h
 ..\output\stm32f10x_it.o: ..\Bsp\hw_config.h
+..\output\stm32f10x_it.o: ..\Bsp\flash_in_stm32.h
 ..\output\stm32f10x_it.o: ..\Bsp\stm32f10x_it.h
 ..\output\stm32f10x_it.o: ..\Bsp\usb_istr.h

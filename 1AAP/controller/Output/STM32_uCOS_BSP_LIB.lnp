@@ -15,6 +15,7 @@
 "..\output\usb_prop.o"
 "..\output\usb_pwr.o"
 "..\output\hw_config.o"
+"..\output\flash_in_stm32.o"
 "..\output\misc.o"
 "..\output\stm32f10x_adc.o"
 "..\output\stm32f10x_bkp.o"

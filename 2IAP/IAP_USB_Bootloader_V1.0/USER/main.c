@@ -31,9 +31,17 @@ uint32_t JumpAddress;
 
 u8 DFU_Mask_Read(void)
 {
-	uint8_t mask;
-  ReadFlashNBtye(0, &mask, 1);  
-	return mask;
+	uint8_t mask[4];
+  ReadFlashNBtye(0, mask, 4);  
+	return mask[0];
+}
+u8 DFU_Mask_Write(u8 *mask)
+{
+	uint8_t mask2[4];
+	WriteFlashNBtye(0,mask,4);
+  ReadFlashNBtye(0, mask2, 4);
+	if(*mask == mask2[0]) return 1;
+	else return 0;
 }
 
 void DFU_Button_Config1(void)
@@ -85,22 +93,24 @@ void RCC_Configuration(void)
 **********************************************************/
 int main(void)
 {
-	u8 i=0;
+	u8 i=0, mask[4]={1};
   RCC_ClocksTypeDef* RCC_Clocks;
 	
 	//RCC_Configuration();//用内部晶振，并且屏蔽掉SystemInit
 	delay_init(72);	//初始化延时函数
 	LED_Init();	//初始化LED接口
 
-	DFU_Button_Config1();	//初始化跳转APP程序按键
+#if 1
+	DFU_Mask_Write(mask); //擦除标志
+#endif
 	
 //看系统频率
 //	i=RCC_GetSYSCLKSource();
 //	RCC_GetClocksFreq( RCC_Clocks);
 	
-	//if(DFU_Mask_Read() == 1)//修改判断
+	if(DFU_Mask_Read() == 0)//修改判断
 	//检测是否进入DFU模式按键，开机没有按下则跳转到APP程序中执行
-	if(DFU_Button_Read() == 1)
+	//if(DFU_Button_Read() == 1)
 	{
 		if(((*(__IO uint32_t*)ApplicationAddress) & 0x2FFE0000 ) == 0x20000000)	//检测APP地址是否合法
 		{
@@ -118,7 +128,8 @@ int main(void)
 
 
 	//进入APP升级模式
-	//WriteFlashNBtye(0,&i,4); //擦除标志
+	mask[0]=0;
+	DFU_Mask_Write(mask); //写标志
 
 	DeviceState = STATE_dfuERROR;
 	DeviceStatus[0] = STATUS_ERRFIRMWARE;

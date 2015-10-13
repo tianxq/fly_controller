@@ -7,3 +7,580 @@ E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\IAP_USB.uvproj
 Project File Date:  09/10/2015
 
 <h2>Output:</h2>
+Build target 'IAP_USB'
+compiling stm32f10x_it.c...
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+compiling led.c...
+compiling hw_config.c...
+linking...
+Program Size: Code=26550 RO-data=3118 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Build target 'IAP_USB'
+compiling led.c...
+linking...
+Program Size: Code=26550 RO-data=3118 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.277V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+linking...
+Program Size: Code=26570 RO-data=3118 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+compiling led.c...
+linking...
+Program Size: Code=26550 RO-data=3118 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+linking...
+Program Size: Code=26568 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+linking...
+Program Size: Code=26564 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+linking...
+Program Size: Code=26560 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+linking...
+Program Size: Code=26564 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+linking...
+Program Size: Code=26560 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+linking...
+Program Size: Code=26564 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+linking...
+Program Size: Code=26564 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+linking...
+Program Size: Code=26564 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+linking...
+Program Size: Code=26564 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Rebuild target 'IAP_USB'
+compiling core_cm3.c...
+assembling startup_stm32f10x_hd.s...
+compiling stm32f10x_it.c...
+compiling system_stm32f10x.c...
+compiling misc.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_fsmc.c...
+compiling delay.c...
+compiling sys.c...
+compiling usart.c...
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+compiling led.c...
+compiling key.c...
+compiling fontupd.c...
+compiling lcd_drive.c...
+compiling lcd_tft.c...
+compiling flash_in_stm32.c...
+compiling usb_core.c...
+compiling usb_init.c...
+compiling usb_int.c...
+compiling usb_mem.c...
+compiling usb_regs.c...
+compiling usb_sil.c...
+compiling hw_config.c...
+compiling usb_desc.c...
+compiling usb_istr.c...
+compiling usb_prop.c...
+compiling usb_pwr.c...
+compiling dfu_mal.c...
+linking...
+Program Size: Code=26564 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\OBJ\\IAP_USB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'IAP_USB'
+compiling main.c...
+main.c(97): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+linking...
+Program Size: Code=26564 RO-data=3124 RW-data=1052 ZI-data=2828  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 1 Warning(s).

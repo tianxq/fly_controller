@@ -73,9 +73,11 @@
 //#include "usb_istr.h"
 //#include "platform_config.h"
 #include "hw_config.h"
+#include "flash_in_stm32.h"
+
 
 //使用bootload
-//#define JKB_SW_H
+#define JKB_SW_H
 //无线数据接收FIFO
 extern Queue QueueRFrxFIFO;
 

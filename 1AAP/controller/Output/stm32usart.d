@@ -45,3 +45,4 @@
 ..\output\stm32usart.o: ..\STM32_USB-FS-Device_Driver\inc\usb_int.h
 ..\output\stm32usart.o: ..\STM32_USB-FS-Device_Driver\inc\usb_sil.h
 ..\output\stm32usart.o: ..\Bsp\hw_config.h
+..\output\stm32usart.o: ..\Bsp\flash_in_stm32.h

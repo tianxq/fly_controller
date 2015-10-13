@@ -23,7 +23,7 @@ void stm32_adc1_init(void)
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
 	GPIO_Init( GPIOA, &GPIO_InitStructure );
 
-	RCC_ADCCLKConfig(RCC_PCLK2_Div6); //72M/8=9,ADC不能超过14M
+	RCC_ADCCLKConfig(RCC_PCLK2_Div8); //72M/8=9,ADC不能超过14M
 	/* Initialize the ADC */
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
 
@@ -43,13 +43,13 @@ void stm32_adc1_init(void)
 
 	ADC_Init( ADC1, &ADC_InitStruct);
 
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_5, 1, ADC_SampleTime_55Cycles5 );  //VERT_LEFT
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_6, 2, ADC_SampleTime_55Cycles5 );  //HORZ_LEFT
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 3, ADC_SampleTime_55Cycles5 ); //VERT_RIGHT
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_2, 4, ADC_SampleTime_55Cycles5 ); //HORZ_RIGHT
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_4, 5, ADC_SampleTime_55Cycles5 ); //CAMERA_PITH
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 6, ADC_SampleTime_55Cycles5 ); //NC_ADC1
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_3, 7, ADC_SampleTime_55Cycles5 ); //BATTEY_CHECK
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_5, 1, ADC_SampleTime_239Cycles5 );  //VERT_LEFT
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_6, 2, ADC_SampleTime_239Cycles5 );  //HORZ_LEFT
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 3, ADC_SampleTime_239Cycles5 ); //VERT_RIGHT
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_2, 4, ADC_SampleTime_239Cycles5 ); //HORZ_RIGHT
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_4, 5, ADC_SampleTime_239Cycles5 ); //CAMERA_PITH
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 6, ADC_SampleTime_239Cycles5 ); //NC_ADC1
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_3, 7, ADC_SampleTime_239Cycles5 ); //BATTEY_CHECK
 
 	ADC_DMACmd(ADC1, ENABLE);
 

@@ -7,5 +7,8 @@ extern uint8_t calibration;
 /**Éý¼¶**/
 extern uint8_t usbSetup;
 
+extern uint8_t HIDReceive_Buffer[64];
+extern uint8_t HIDReceive_Buffer_len;
+
 void usbHIDInit(void);
 

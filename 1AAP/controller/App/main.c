@@ -31,7 +31,12 @@
 uint8_t  sbusData[17]={0x5a,0xa5};
 uint16_t BatteryVoltage;//The battery voltage
 
+//程序跳转
+#define ApplicationAddress 0x08000000	//IAP程序起始地址=0
 
+typedef  void (*pFunction)(void);
+pFunction Jump_To_Application;
+uint32_t JumpAddress;
 
 //定义uCOS任务堆栈
 OS_STK		Task_Start[Task_Start_Size];
@@ -407,14 +412,65 @@ void TaskUart(void *pdata)
 /********************************* uCOS任务	USBHID *************************************/
 void TaskUSBHID(void *pdata)
 {
-	
+	uint8_t InBuffer[8]={1,2,3,4,5,6,7,8};
+	uint8_t wFlashBuffer[4]={0},rFlashBuffer[4];
 	while(1)
 	{
 		//读取缓冲区HID指令
-		//1,updata
+		//1,摇杆校准
 		//2,japan,america,china
-		//3,摇杆校准
-		OSTimeDly(OS_TICKS_PER_SEC);
+		//3,updata
+		//4,数据上传
+				
+		  if (HIDReceive_Buffer[0] == 0x01) //handStyle=0;
+			{
+				wFlashBuffer[0]=HIDReceive_Buffer[1];
+				WriteFlashNBtye(4,wFlashBuffer,4);
+				ReadFlashNBtye(4, rFlashBuffer, 4);
+				if(rFlashBuffer[0]!=wFlashBuffer[0])
+				{ 
+					//设置失败
+				}
+			}
+			else if (HIDReceive_Buffer[0] == 0x02)//calibration=0;摇杆校准=1
+			{
+				//校准
+			}
+			else if (HIDReceive_Buffer[0] == 0x03)//升级
+			{
+				wFlashBuffer[0]=HIDReceive_Buffer[1];
+				WriteFlashNBtye(0,wFlashBuffer,4);
+				ReadFlashNBtye(0, rFlashBuffer, 4);
+				if(rFlashBuffer[0]!=wFlashBuffer[0])
+				{ 
+					//升级位标记错误,IAP无法识别标志位升级
+				}
+				else
+				{
+					//跳转到IAP地址开始执行，地址+4位置是复位中断入口 ApplicationAddress=0
+					JumpAddress = *(__IO uint32_t*) (ApplicationAddress + 4);
+					Jump_To_Application = (pFunction) JumpAddress;
+
+					//设置IAP程序堆栈指针
+					__set_MSP(*(__IO uint32_t*) ApplicationAddress);
+					
+					//跳转到APP程序中执行
+					Jump_To_Application();
+				}
+			}
+			else if (HIDReceive_Buffer[0] == 0x04)
+			{
+					//上传数据
+					/*********
+					UserToPMABufferCopy(InBuffer, GetEPTxAddr(ENDP1), 6);
+					SetEPTxCount(ENDP1, 6);                    
+					SetEPTxValid(ENDP1);
+					*********/
+			}
+			
+			HIDReceive_Buffer[0]=0;
+
+		OSTimeDly(OS_TICKS_PER_SEC/100);
 	}
 }
 
@@ -422,11 +478,11 @@ void TaskUSBHID(void *pdata)
 /********************************* Main函数 *************************************/
 int main(void)
 {
+		//SystemInit();//usb中断必须要？？这个
 #ifdef JKB_SW_H
 	SCB->VTOR = FLASH_BASE | 0x10000; /* Vector Table Relocation in Internal FLASH. */
 #endif
 	/* 配置系统时钟为72M */ 
-	SystemInit();//usb中断必须要？？这个
 
 	/******************************** 中断向量初始化 ****************************/	
 	NVIC_Configuration();//boot要修改flash地址
@@ -440,7 +496,7 @@ int main(void)
 	motoInit(14400,0);
 	key_IO_Init();
 	//sbus传输初始化
-	rs485_1_Init(115200,UART_CONFIG_PAR_EVEN);
+	rs485_1_Init(57600,UART_CONFIG_PAR_EVEN);
 	stm32_adc1_init();
 		
   /******************************** 创建启动任务 ******************************/
