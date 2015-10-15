@@ -193,21 +193,24 @@ void delay_us(uint32_t nus)
 {
 	uint32_t savecount,endcnt,CPU_cnt;
 
-	savecount = DWT_CYCCNT;	//保存计数器当前数值
-	CPU_cnt = nus*(CPU_CLK/(1000*1000));	//计算达到所需延时值的CPU时钟数。即多少个系统时钟计数
-											//得到更精确延时时间，减去前面代码运行的时间即可
+//	savecount = DWT_CYCCNT;	//保存计数器当前数值
+//	CPU_cnt = nus*(CPU_CLK/(1000*1000));	//计算达到所需延时值的CPU时钟数。即多少个系统时钟计数
+//											//得到更精确延时时间，减去前面代码运行的时间即可
 
-	endcnt = savecount + CPU_cnt;	//计算所需延时时间DWT_CYCCNT的计数值，在溢出时返回到0
+//	endcnt = savecount + CPU_cnt;	//计算所需延时时间DWT_CYCCNT的计数值，在溢出时返回到0
+//	
+//	if(endcnt > savecount)	//所需延时值大于当前计数值
+//	{
+//		while(DWT_CYCCNT < endcnt);	//循环等待所需要的延时时间的CPU时钟计数值
+//	}
+//	else	//小于当前计数值
+//	{
+//		while(DWT_CYCCNT > endcnt);	//等待计数器溢出翻转
+//		while(DWT_CYCCNT < endcnt);	//等待所需延时时间到达
+//	}
 	
-	if(endcnt > savecount)	//所需延时值大于当前计数值
-	{
-		while(DWT_CYCCNT < endcnt);	//循环等待所需要的延时时间的CPU时钟计数值
-	}
-	else	//小于当前计数值
-	{
-		while(DWT_CYCCNT > endcnt);	//等待计数器溢出翻转
-		while(DWT_CYCCNT < endcnt);	//等待所需延时时间到达
-	}
+	for(savecount=0;savecount<0xf;savecount++);
+	
 }
 
 //=========================================================

@@ -77,7 +77,7 @@
 
 
 //使用bootload
-#define JKB_SW_H
+//#define JKB_SW_H
 //无线数据接收FIFO
 extern Queue QueueRFrxFIFO;
 

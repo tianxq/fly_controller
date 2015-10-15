@@ -88,6 +88,48 @@ void RCC_Configuration(void)
   }
 }
 
+//管脚复位
+static void GPIO_DeIntConfiguration(void)
+{
+    GPIO_InitTypeDef GPIO_InitStructure;
+    /* Configure all unused GPIO port pins in Analog Input mode (floating input
+    trigger OFF), this will reduce the power consumption and increase the device
+    immunity against EMI/EMC *************************************************/
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB |
+                           RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |
+                           RCC_APB2Periph_GPIOE, ENABLE);
+
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+    GPIO_Init(GPIOB, &GPIO_InitStructure);
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+    GPIO_Init(GPIOE, &GPIO_InitStructure);
+
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB |
+                           RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |
+                           RCC_APB2Periph_GPIOE, DISABLE);
+}
+void usbDisable(void)
+{
+	GPIO_InitTypeDef  GPIO_InitStructure;
+	u32 i=0x2ffffff;
+	
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USB, DISABLE);
+
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	
+	PowerOff();
+
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11|GPIO_Pin_12;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	GPIO_ResetBits(GPIOA, GPIO_Pin_11|GPIO_Pin_12);
+	while(i--);
+}
 /**********************************************************
                            主函数
 **********************************************************/
@@ -95,13 +137,23 @@ int main(void)
 {
 	u8 i=0, mask[4]={1};
   RCC_ClocksTypeDef* RCC_Clocks;
+
+	//GPIO_DeIntConfiguration();
 	
 	//RCC_Configuration();//用内部晶振，并且屏蔽掉SystemInit
-	delay_init(72);	//初始化延时函数
-	LED_Init();	//初始化LED接口
+	//delay_init(72);	//初始化延时函数
 
-#if 1
-	DFU_Mask_Write(mask); //擦除标志
+	//调回来的时候进入第一个函数就死了？？？在app调回来之前先关掉所有外设中断
+	LED_Init();	//初始化LED接口
+	LedOn(LED_X_G);
+	LedOn(LED_GPS_G);
+	LedOn(LED_CH_G);
+	LedOff(LED_X_R);
+	LedOff(LED_GPS_R);
+	LedOff(LED_CH_R);
+
+#if 0
+	DFU_Mask_Write(mask); //加标志
 #endif
 	
 //看系统频率
@@ -112,6 +164,9 @@ int main(void)
 	//检测是否进入DFU模式按键，开机没有按下则跳转到APP程序中执行
 	//if(DFU_Button_Read() == 1)
 	{
+		//关闭USB
+		usbDisable();
+		//__set_PRIMASK(1);//关掉所有中断
 		if(((*(__IO uint32_t*)ApplicationAddress) & 0x2FFE0000 ) == 0x20000000)	//检测APP地址是否合法
 		{
 			//跳转到APP地址开始执行，地址+4位置是复位中断入口
@@ -127,10 +182,6 @@ int main(void)
 	}
 
 
-	//进入APP升级模式
-	mask[0]=0;
-	DFU_Mask_Write(mask); //写标志
-
 	DeviceState = STATE_dfuERROR;
 	DeviceStatus[0] = STATUS_ERRFIRMWARE;
 	DeviceStatus[4] = DeviceState;
@@ -139,6 +190,10 @@ int main(void)
 	Set_USBClock();
 	USB_Init();
 	
+	
+		//进入APP升级模式
+	mask[0]=0;
+	DFU_Mask_Write(mask); //写标志
 	while(1)
 	{
 		i++;

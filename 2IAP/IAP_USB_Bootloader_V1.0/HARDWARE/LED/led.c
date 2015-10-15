@@ -20,22 +20,21 @@ void LED_Init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	
-//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	//开启GPIOC外设时钟	
-//
-//	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
-//	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-//	GPIO_Init(GPIOC, &GPIO_InitStructure);
-//
-//	GPIO_SetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1);	//输出高电平，熄灭灯
-
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOA, ENABLE);	//开启GPIOB and GPIOE外设时钟	
-
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;	//初始化GPIOx.5---------->LEO0---->PB.5
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	//GPIO翻转速度为50MHz
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	//设置为推挽输出
-	GPIO_Init(GPIOB, &GPIO_InitStructure);	//初始化GPIO相关结构体
-	GPIO_SetBits(GPIOB, GPIO_Pin_6);	
+    /* Enable the GPIO_LED Clock */
+    RCC_APB2PeriphClockCmd(LED_RCC, ENABLE);
+    /* Configure the GPIO_LED pin */
+    GPIO_InitStructure.GPIO_Pin = LED_X_G|LED_X_R|LED_GPS_G|LED_GPS_R
+																	|LED_CH_G|LED_CH_R;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+    GPIO_Init(LED_GPIO, &GPIO_InitStructure);
+		
+	  RCC_APB2PeriphClockCmd(CHG_RCC, ENABLE);
+    /* Configure the GPIO_LED pin */
+    GPIO_InitStructure.GPIO_Pin = CHG_ERR|CHG_STA;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+    GPIO_Init(CHG_GPIO, &GPIO_InitStructure);
 	
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;	//马达
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	

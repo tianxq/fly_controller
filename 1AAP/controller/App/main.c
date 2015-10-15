@@ -447,6 +447,10 @@ void TaskUSBHID(void *pdata)
 				}
 				else
 				{
+					__set_PRIMASK(1);//关掉所有中断
+					//关闭USB
+					usbDisable();
+					
 					//跳转到IAP地址开始执行，地址+4位置是复位中断入口 ApplicationAddress=0
 					JumpAddress = *(__IO uint32_t*) (ApplicationAddress + 4);
 					Jump_To_Application = (pFunction) JumpAddress;
@@ -486,19 +490,20 @@ int main(void)
 
 	/******************************** 中断向量初始化 ****************************/	
 	NVIC_Configuration();//boot要修改flash地址
+	//__set_PRIMASK(1);//打开所有中断
 	/****************************** GPIO恢复到默认配置 **************************/	
 	GPIO_DeIntConfiguration();
 	/******************************** uCOS-II初始化 *****************************/
   OSInit();
   /******************************** 硬件初始化 *********************************/
-	usbHIDInit();
+
 	ledInit();
 	motoInit(14400,0);
 	key_IO_Init();
 	//sbus传输初始化
-	rs485_1_Init(57600,UART_CONFIG_PAR_EVEN);
+	rs485_1_Init(115200,UART_CONFIG_PAR_EVEN);
 	stm32_adc1_init();
-		
+	usbHIDInit();	
   /******************************** 创建启动任务 ******************************/
     OSTaskCreateExt(TaskStart,
                     (void *)0,

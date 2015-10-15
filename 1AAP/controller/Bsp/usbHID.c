@@ -17,3 +17,26 @@ void usbHIDInit(void)
 
   USB_Init();
 }
+
+void usbDisable(void)
+{
+	GPIO_InitTypeDef  GPIO_InitStructure;
+	u32 i=0x2ffffff;
+	
+	//NVIC_DisableIRQ(USB_LP_CAN1_RX0_IRQn);
+//	__set_PRIMASK(1);//关掉所有中断
+//	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USB, DISABLE);
+
+//    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+
+	
+	PowerOff();//跳回去就死了
+	//GPIO_DeInit(GPIOA);
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11|GPIO_Pin_12;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	GPIO_ResetBits(GPIOA, GPIO_Pin_11|GPIO_Pin_12);
+	while(i--);
+}

@@ -4,447 +4,20 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\STM32_uCOS_BSP_LIB.uvproj
-Project File Date:  10/09/2015
+Project File Date:  10/14/2015
 
 <h2>Output:</h2>
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-"..\App\main.c" - 0 Errors, 4 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling usbHID.c...
-compiling usb_desc.c...
-compiling usb_endp.c...
-compiling usb_prop.c...
-linking...
-Program Size: Code=17944 RO-data=888 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling usb_desc.c...
-linking...
-Program Size: Code=17944 RO-data=888 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling usb_desc.c...
-linking...
-Program Size: Code=17944 RO-data=888 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling usb_desc.c...
-compiling usb_prop.c...
-compiling hw_config.c...
-linking...
-Program Size: Code=17944 RO-data=764 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling usb_desc.c...
-compiling usb_prop.c...
-compiling hw_config.c...
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling system_stm32f10x.c...
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.274V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling system_stm32f10x.c...
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.274V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
 Build target 'STM32_uCOS_BSP_LIB'
 compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
 linking...
-Program Size: Code=17952 RO-data=768 RW-data=452 ZI-data=11988  
+Program Size: Code=18468 RO-data=768 RW-data=456 ZI-data=12056  
 FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 4 Warning(s).
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 5 Warning(s).
 Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
 Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
 * JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
@@ -457,995 +30,13 @@ Hardware: V9.20
 Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
  
 * JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 4 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-linking...
-Program Size: Code=17952 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 4 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
 * JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
 * JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.277V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-linking...
-Program Size: Code=17952 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 4 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.274V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling usb_desc.c...
-compiling usb_endp.c...
-compiling usb_istr.c...
-compiling usb_prop.c...
-compiling usb_pwr.c...
-compiling hw_config.c...
-compiling misc.c...
-compiling stm32f10x_adc.c...
-compiling stm32f10x_bkp.c...
-compiling stm32f10x_can.c...
-compiling stm32f10x_cec.c...
-compiling stm32f10x_crc.c...
-compiling stm32f10x_dac.c...
-compiling stm32f10x_dbgmcu.c...
-compiling stm32f10x_dma.c...
-compiling stm32f10x_exti.c...
-compiling stm32f10x_flash.c...
-compiling stm32f10x_fsmc.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_iwdg.c...
-compiling stm32f10x_pwr.c...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_rtc.c...
-compiling stm32f10x_sdio.c...
-compiling stm32f10x_spi.c...
-compiling stm32f10x_tim.c...
-compiling stm32f10x_usart.c...
-compiling stm32f10x_wwdg.c...
-compiling system_stm32f10x.c...
-compiling usb_core.c...
-compiling usb_init.c...
-compiling usb_int.c...
-compiling usb_mem.c...
-compiling usb_regs.c...
-compiling usb_sil.c...
-linking...
-Program Size: Code=17952 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 8 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling usb_desc.c...
-compiling usb_endp.c...
-compiling usb_istr.c...
-compiling usb_prop.c...
-compiling usb_pwr.c...
-compiling hw_config.c...
-compiling misc.c...
-compiling stm32f10x_adc.c...
-compiling stm32f10x_bkp.c...
-compiling stm32f10x_can.c...
-compiling stm32f10x_cec.c...
-compiling stm32f10x_crc.c...
-compiling stm32f10x_dac.c...
-compiling stm32f10x_dbgmcu.c...
-compiling stm32f10x_dma.c...
-compiling stm32f10x_exti.c...
-compiling stm32f10x_flash.c...
-compiling stm32f10x_fsmc.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_iwdg.c...
-compiling stm32f10x_pwr.c...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_rtc.c...
-compiling stm32f10x_sdio.c...
-compiling stm32f10x_spi.c...
-compiling stm32f10x_tim.c...
-compiling stm32f10x_usart.c...
-compiling stm32f10x_wwdg.c...
-compiling system_stm32f10x.c...
-compiling usb_core.c...
-compiling usb_init.c...
-compiling usb_int.c...
-compiling usb_mem.c...
-compiling usb_regs.c...
-compiling usb_sil.c...
-linking...
-Program Size: Code=17952 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 8 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-linking...
-Program Size: Code=17944 RO-data=768 RW-data=452 ZI-data=11988  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 4 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling usb_endp.c...
-linking...
-Program Size: Code=17964 RO-data=768 RW-data=452 ZI-data=12052  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 8 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-linking...
-Program Size: Code=17972 RO-data=768 RW-data=452 ZI-data=12052  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 4 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.274V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(419): error:  #20: identifier "mask" is undefined
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling usb_endp.c...
-compiling flash_in_stm32.c...
-..\Bsp\flash_in_stm32.c(2): error:  #5: cannot open source input file "stm32_config.h": No such file or directory
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 2 Errors, 8 Warning(s).
-Target not created
-compiling flash_in_stm32.c...
-"..\Bsp\flash_in_stm32.c" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(419): error:  #20: identifier "mask" is undefined
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 1 Errors, 4 Warning(s).
-Target not created
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-linking...
-Program Size: Code=18492 RO-data=768 RW-data=452 ZI-data=12052  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 4 Warning(s).
 Build target 'STM32_uCOS_BSP_LIB'
 linking...
-Program Size: Code=18492 RO-data=768 RW-data=452 ZI-data=12052  
+Program Size: Code=18468 RO-data=768 RW-data=456 ZI-data=12056  
 FromELF: creating hex file...
 "..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=18492 RO-data=768 RW-data=452 ZI-data=12052  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(154): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(234): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(389): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(389): warning:  #177-D: variable "len" was declared but never referenced
-linking...
-Program Size: Code=18492 RO-data=768 RW-data=452 ZI-data=12052  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 4 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-linking...
-Program Size: Code=18472 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 5 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=18472 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=18472 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Rebuild target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling FIFO_App.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling usb_desc.c...
-compiling usb_endp.c...
-compiling usb_istr.c...
-compiling usb_prop.c...
-compiling usb_pwr.c...
-compiling hw_config.c...
-compiling flash_in_stm32.c...
-compiling misc.c...
-compiling stm32f10x_adc.c...
-compiling stm32f10x_bkp.c...
-compiling stm32f10x_can.c...
-compiling stm32f10x_cec.c...
-compiling stm32f10x_crc.c...
-compiling stm32f10x_dac.c...
-compiling stm32f10x_dbgmcu.c...
-compiling stm32f10x_dma.c...
-compiling stm32f10x_exti.c...
-compiling stm32f10x_flash.c...
-compiling stm32f10x_fsmc.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_iwdg.c...
-compiling stm32f10x_pwr.c...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_rtc.c...
-compiling stm32f10x_sdio.c...
-compiling stm32f10x_spi.c...
-compiling stm32f10x_tim.c...
-compiling stm32f10x_usart.c...
-compiling stm32f10x_wwdg.c...
-compiling core_cm3.c...
-compiling system_stm32f10x.c...
-assembling startup_stm32f10x_hd.s...
-compiling os_core.c...
-compiling os_flag.c...
-compiling os_mbox.c...
-compiling os_mem.c...
-compiling os_mutex.c...
-compiling os_q.c...
-compiling os_sem.c...
-compiling os_task.c...
-compiling os_time.c...
-compiling os_tmr.c...
-compiling os_cpu_c.c...
-compiling os_dbg.c...
-assembling os_cpu_a.asm...
-compiling otgd_fs_cal.c...
-compiling otgd_fs_dev.c...
-compiling otgd_fs_int.c...
-compiling otgd_fs_pcd.c...
-compiling usb_core.c...
-compiling usb_init.c...
-compiling usb_int.c...
-compiling usb_mem.c...
-compiling usb_regs.c...
-compiling usb_sil.c...
-linking...
-Program Size: Code=18472 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 9 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=18472 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling flash_in_stm32.c...
-linking...
-Program Size: Code=18512 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 9 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling flash_in_stm32.c...
-linking...
-Program Size: Code=18512 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 9 Warning(s).
-Rebuild target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling FIFO_App.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling usb_desc.c...
-compiling usb_endp.c...
-compiling usb_istr.c...
-compiling usb_prop.c...
-compiling usb_pwr.c...
-compiling hw_config.c...
-compiling flash_in_stm32.c...
-compiling misc.c...
-compiling stm32f10x_adc.c...
-compiling stm32f10x_bkp.c...
-compiling stm32f10x_can.c...
-compiling stm32f10x_cec.c...
-compiling stm32f10x_crc.c...
-compiling stm32f10x_dac.c...
-compiling stm32f10x_dbgmcu.c...
-compiling stm32f10x_dma.c...
-compiling stm32f10x_exti.c...
-compiling stm32f10x_flash.c...
-compiling stm32f10x_fsmc.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_iwdg.c...
-compiling stm32f10x_pwr.c...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_rtc.c...
-compiling stm32f10x_sdio.c...
-compiling stm32f10x_spi.c...
-compiling stm32f10x_tim.c...
-compiling stm32f10x_usart.c...
-compiling stm32f10x_wwdg.c...
-compiling core_cm3.c...
-compiling system_stm32f10x.c...
-assembling startup_stm32f10x_hd.s...
-compiling os_core.c...
-compiling os_flag.c...
-compiling os_mbox.c...
-compiling os_mem.c...
-compiling os_mutex.c...
-compiling os_q.c...
-compiling os_sem.c...
-compiling os_task.c...
-compiling os_time.c...
-compiling os_tmr.c...
-compiling os_cpu_c.c...
-compiling os_dbg.c...
-assembling os_cpu_a.asm...
-compiling otgd_fs_cal.c...
-compiling otgd_fs_dev.c...
-compiling otgd_fs_int.c...
-compiling otgd_fs_pcd.c...
-compiling usb_core.c...
-compiling usb_init.c...
-compiling usb_int.c...
-compiling usb_mem.c...
-compiling usb_regs.c...
-compiling usb_sil.c...
-linking...
-Program Size: Code=18512 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 9 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling flash_in_stm32.c...
-linking...
-Program Size: Code=18472 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 9 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.274V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-linking...
-Program Size: Code=18464 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 5 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.275V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-linking...
-Program Size: Code=18464 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 5 Warning(s).
-Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
-Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
-* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.68a, compiled Apr 12 2013 13:26:50
-Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
-Hardware: V9.20
-Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: TPIU fitted.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103CB
-VTarget = 3.274V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 2000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-linking...
-Program Size: Code=18464 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 5 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-linking...
-Program Size: Code=18464 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
-Build target 'STM32_uCOS_BSP_LIB'
-compiling main.c...
-..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
-..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
-..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
-..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
-..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-linking...
-Program Size: Code=18460 RO-data=768 RW-data=456 ZI-data=12056  
-FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 5 Warning(s).
 Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
 Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
 * JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
@@ -1485,20 +76,849 @@ compiling main.c...
 ..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
 ..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
 ..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
-compiling stm32f10x_it.c...
-compiling RS485.c...
-..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-compiling Stm32Usart.c...
-compiling led.c...
-..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
-..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
-compiling sbus.c...
-compiling adc.c...
-..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
-compiling key.c...
-compiling usbHID.c...
-compiling flash_in_stm32.c...
 linking...
-Program Size: Code=18500 RO-data=768 RW-data=456 ZI-data=12056  
+Program Size: Code=18552 RO-data=768 RW-data=456 ZI-data=12056  
 FromELF: creating hex file...
-"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 9 Warning(s).
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 5 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(37): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=18552 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(37): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=18552 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(37): warning:  #1-D: last line of file ends without a newline
+..\Bsp\usbHID.c(24): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=18540 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 2 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(38): warning:  #1-D: last line of file ends without a newline
+..\Bsp\usbHID.c(24): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=18560 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 2 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=18560 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(38): warning:  #1-D: last line of file ends without a newline
+..\Bsp\usbHID.c(24): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=18560 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 2 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(39): warning:  #1-D: last line of file ends without a newline
+..\Bsp\usbHID.c(24): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=18768 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 2 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=18768 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+compiling usbHID.c...
+..\Bsp\usbHID.c(39): warning:  #1-D: last line of file ends without a newline
+..\Bsp\usbHID.c(24): warning:  #177-D: variable "i" was declared but never referenced
+"..\Bsp\usbHID.c" - 0 Errors, 2 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=18768 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(39): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=18776 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(39): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=18552 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.277V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(39): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=18552 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(39): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=18552 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 1 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+compiling usbHID.c...
+..\Bsp\usbHID.c(40): warning:  #1-D: last line of file ends without a newline
+"..\Bsp\usbHID.c" - 0 Errors, 1 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=18556 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=18556 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=18556 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=18556 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(33): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(42): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=18568 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 2 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(159): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(239): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(394): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(394): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(415): warning:  #177-D: variable "InBuffer" was declared but never referenced
+compiling usbHID.c...
+..\Bsp\usbHID.c(33): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(42): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=18576 RO-data=768 RW-data=456 ZI-data=12056  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 7 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
