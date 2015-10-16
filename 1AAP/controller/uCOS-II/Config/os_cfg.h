@@ -45,7 +45,7 @@
 #define OS_MAX_QS                10u   /* Max. number of queue control blocks in your application      */
 #define OS_MAX_TASKS             20u   /* Max. number of tasks in your application, MUST be >= 2       */
 
-#define OS_SCHED_LOCK_EN          0u   /* Include code for OSSchedLock() and OSSchedUnlock()           */
+#define OS_SCHED_LOCK_EN          1u   /* Include code for OSSchedLock() and OSSchedUnlock()           */
 
 #define OS_TICK_STEP_EN           0u   /* Enable tick stepping feature for uC/OS-View                  */
 #define OS_TICKS_PER_SEC       1000u   /* Set the number of ticks in one second                        */
@@ -130,15 +130,15 @@
 #define OS_TIME_DLY_HMSM_EN       1u   /*     Include code for OSTimeDlyHMSM()                         */
 #define OS_TIME_DLY_RESUME_EN     1u   /*     Include code for OSTimeDlyResume()                       */
 #define OS_TIME_GET_SET_EN        1u   /*     Include code for OSTimeGet() and OSTimeSet()             */
-#define OS_TIME_TICK_HOOK_EN      0u   /*     Include code for OSTimeTickHook()                        */
+#define OS_TIME_TICK_HOOK_EN      1u   /*     Include code for OSTimeTickHook()                        */
 
 
                                        /* --------------------- TIMER MANAGEMENT --------------------- */
-#define OS_TMR_EN                 0u   /* Enable (1) or Disable (0) code generation for TIMERS         */
+#define OS_TMR_EN                 1u   /* Enable (1) or Disable (0) code generation for TIMERS         */
 #define OS_TMR_CFG_MAX           16u   /*     Maximum number of timers                                 */
 #define OS_TMR_CFG_NAME_EN        1u   /*     Determine timer names                                    */
 #define OS_TMR_CFG_WHEEL_SIZE     8u   /*     Size of timer wheel (#Spokes)                            */
-#define OS_TMR_CFG_TICKS_PER_SEC 10u   /*     Rate at which timer management task runs (Hz)            */
+#define OS_TMR_CFG_TICKS_PER_SEC 100u   /*     Rate at which timer management task runs (Hz)            */
 
 #endif
 	 	   	  		 			 	    		   		 		 	 	 			 	    		   	 			 	  	 		 				 		  			 		 					 	  	  		      		  	   		      		  	 		 	      		   		 		  	 		 	      		  		  		  

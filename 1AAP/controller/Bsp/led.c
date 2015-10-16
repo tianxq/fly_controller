@@ -2,7 +2,7 @@
 
 uint8_t ledXstate=0,ledGPSstate=0,ledCHstate=0;//µÆ×´Ì¬
 uint8_t motostate=0;
-uint8_t keythreeSt1=0,keythreeSt2=0;
+//uint8_t keythreeSt1=0,keythreeSt2=0;
 /********************************* LED³õÊ¼»¯ *************************************/
 void ledInit(void)
 {

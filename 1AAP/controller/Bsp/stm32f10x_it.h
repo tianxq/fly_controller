@@ -42,6 +42,10 @@ void SysTick_Handler(void);
 
 void USART1_IRQHandler(void);
 
+void EXTI2_IRQHandler(void);
+void EXTI3_IRQHandler(void);
+void EXTI15_10_IRQHandler(void);
+
 void USB_LP_CAN1_RX0_IRQHandler(void);
 
 #endif /* __STM32F10x_IT_H */

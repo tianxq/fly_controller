@@ -36,7 +36,7 @@
 * 2) You must call OSTmrSignal() to notify the Timer management task that it's time to update the timers.
 ************************************************************************************************************************
 */
-#define OS_TASK_TMR_PRIO 60
+#define OS_TASK_TMR_PRIO 1
 /*
 ************************************************************************************************************************
 *                                                     CONSTANTS

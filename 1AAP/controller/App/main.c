@@ -22,14 +22,18 @@
 //定义uCOS任务优先级
 #define		Task_Start_Prio			15
 #define   Task_LedBeep_Prio   12
-#define   Task_ADC_Prio       2
-#define   Task_Key_Prio      1
-#define   Task_Uart_Prio      4
-#define   Task_USBHID_Prio    3
+#define   Task_ADC_Prio       9
+#define   Task_Key_Prio      8
+#define   Task_Uart_Prio      11
+#define   Task_USBHID_Prio    10
 
-//sbus数据
-uint8_t  sbusData[17]={0x5a,0xa5};
+
 uint16_t BatteryVoltage;//The battery voltage
+KeyStatus keyst[6];
+
+		
+INT8U err_timer;
+OS_TMR *timekeyHome,*timekeyOkf,*timekeyPhoto,*timekeyA,*timekeyB;
 
 //程序跳转
 #define ApplicationAddress 0x08000000	//IAP程序起始地址=0
@@ -97,7 +101,7 @@ static void GPIO_DeIntConfiguration(void)
 /********************************* uCOS启动任务 *************************************/
 void TaskStart(void *pdata)
 {
-	
+
     OSTaskCreateExt(TaskLedBeep,
                     (void *)0,
                     &Task_LedBeep_Stk[Task_LedBeep_Stk_Size - 1],
@@ -116,15 +120,15 @@ void TaskStart(void *pdata)
                     Task_ADC_Stk_Size,
                     (void *)0,
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
-	    OSTaskCreateExt(TaskKey,
-                    (void *)0,
-                    &Task_Key_Stk[Task_Key_Stk_Size - 1],
-                    Task_Key_Prio,
-                    Task_Key_Prio,
-                    &Task_Key_Stk[0],
-                    Task_Key_Stk_Size,
-                    (void *)0,
-                    OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
+//	    OSTaskCreateExt(TaskKey,
+//                    (void *)0,
+//                    &Task_Key_Stk[Task_Key_Stk_Size - 1],
+//                    Task_Key_Prio,
+//                    Task_Key_Prio,
+//                    &Task_Key_Stk[0],
+//                    Task_Key_Stk_Size,
+//                    (void *)0,
+//                    OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
 			OSTaskCreateExt(TaskUart,
                     (void *)0,
                     &Task_Uart_Stk[Task_Uart_Stk_Size - 1],
@@ -223,6 +227,9 @@ void TaskADC(void *pdata)
 	uint16_t i,j;
 	uint16_t ADResults[CHANNEL_NUM];
 	uint16_t ADtoFilter[CHANNEL_NUM][AVERAGE_FILTER_BUFFER_SIZE];
+	rc_pro_com_in_pkt_t sbusData;
+	
+	sbusData.head =0x5AA5;
 	
 	while(1)
 	{
@@ -243,13 +250,27 @@ void TaskADC(void *pdata)
 		{
 			ADResults[i]=ADResults[i]>>1;
 		}
-		sbusData[2]=1;
-		sbusData[3]=12;
-		memcpy(sbusData+4,ADResults,12);
+		sbusData.type=1;
+		sbusData.length=14;
+		memcpy(sbusData.adc,ADResults,12);
 		
-		sbusData[16]=checksum8(sbusData,16);
+		/*key*/
+		sbusData.key=0;
+		sbusData.key |= keyst[0]<<14;
+		sbusData.key |= keyst[1]<<12;
+		sbusData.key |= keyst[2]<<10;
+		sbusData.key |= keyst[3]<<8;
+		sbusData.key |= keyst[4]<<6;
+		sbusData.key |= keyst[5]<<4;
+		/**/
+		
+		sbusData.chk=checksum8((uint8_t *)&sbusData,18);
 		//每10ms发送一次AD
-		//RS485Send(1,sbusData,17);
+		RS485Send(1,(uint8_t *)&sbusData,19);
+//		RS485Send(1,(uint8_t *)&sbusData.key,2);
+//		RS485Send(1,(uint8_t *)keyst,6);
+
+		memset(keyst,0,6);
 		
 		BatteryVoltage=ADResults[6];
 		
@@ -262,129 +283,42 @@ void TaskADC(void *pdata)
 			ledCHstate=1;
 		}
 		
-		OSTimeDly(OS_TICKS_PER_SEC/100);
+		OSTimeDly(OS_TICKS_PER_SEC/1);
 	}
 }
 
 /******************************* uCOS任务Key ***********************************/
 void TaskKey(void *pdata)
 {
-	KeyStatus st;
 		
 	while(1)
 	{
-		st=ReadKeyStatus(KEY_A_GPIO,KEY_A,&keyAst);
-		if(st==ContiousKeyDownStatus)
-		{
-			sbusData[2]=7;
-			sbusData[3]=3;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		else if(st==OnceKeyDownStatus)
-		{
-			sbusData[2]=7;
-			sbusData[3]=2;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		st=ReadKeyStatus(KEY_B_GPIO,KEY_B,&keyBst);
-		if(st==OnceKeyDownStatus)
-		{
-			sbusData[2]=8;
-			sbusData[3]=2;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		else if(st==ContiousKeyDownStatus)
-		{
-			sbusData[2]=8;
-			sbusData[3]=3;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		st=ReadKeyStatus(KEY_OKF_GPIO,KEY_OKF,&keyOKFst);
-		if(st==OnceKeyDownStatus)
-		{
-			sbusData[2]=4;
-			sbusData[3]=2;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		else if(st==ContiousKeyDownStatus)
-		{
-			sbusData[2]=4;
-			sbusData[3]=3;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		st=ReadKeyStatus(KEY_HOME_GPIO,KEY_HOME,&keyHOMEst);
-		if(st==OnceKeyDownStatus)
-		{
-			sbusData[2]=3;
-			sbusData[3]=2;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		else if(st==ContiousKeyDownStatus)
-		{
-			sbusData[2]=3;
-			sbusData[3]=3;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		st=ReadKeyStatus(KEY_PHOTO_GPIO,KEY_PHOTO,&keyPHOTOst);
-		if(st==OnceKeyDownStatus)
-		{
-			sbusData[2]=5;
-			sbusData[3]=2;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		else if(st==ContiousKeyDownStatus)
-		{
-			sbusData[2]=5;
-			sbusData[3]=3;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		st=ReadKeyStatus(KEY_VIDEO_GPIO,KEY_VIDEO,&keyVIDEOst);
-		if(st==OnceKeyDownStatus)
-		{
-			sbusData[2]=6;
-			sbusData[3]=2;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
-		else if(st==ContiousKeyDownStatus)
-		{
-			sbusData[2]=6;
-			sbusData[3]=3;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-		}
+		keyst[4]=ReadKeyStatus(KEY_A_GPIO,KEY_A,&keyAst);
+
+		keyst[5]=ReadKeyStatus(KEY_B_GPIO,KEY_B,&keyBst);
+
+		keyst[2]=ReadKeyStatus(KEY_OKF_GPIO,KEY_OKF,&keyOKFst);
+
+		keyst[1]=ReadKeyStatus(KEY_HOME_GPIO,KEY_HOME,&keyHOMEst);
+
+		keyst[3]=ReadKeyStatus(KEY_PHOTO_GPIO,KEY_PHOTO,&keyPHOTOst);
+
+		//keyst[3]=ReadKeyStatus(KEY_VIDEO_GPIO,KEY_VIDEO,&keyVIDEOst);
 		
 		if(GPIO_ReadInputDataBit(KEY_THREE_GPIO,KEY_NEWHAND)==0)
 		{
-			keythreeSt2=1;
+			keyst[0]=1;
 		}
 		else if(GPIO_ReadInputDataBit(KEY_THREE_GPIO,KEY_AE)==0)
 		{
-			keythreeSt2=2;
+			keyst[0]=2;
 		}
 		else if(GPIO_ReadInputDataBit(KEY_THREE_GPIO,KEY_VIO)==0)
 		{
-			keythreeSt2=3;
+			keyst[0]=3;
 		}
-		if(keythreeSt2!= keythreeSt1)
-		{
-			sbusData[2]=2;
-			sbusData[3]=keythreeSt2;
-			sbusData[4]=checksum8(sbusData,4);
-			RS485Send(1,sbusData,5);
-			keythreeSt1 = keythreeSt2;
-		}
-		OSTimeDly(OS_TICKS_PER_SEC/200);
+		
+		OSTimeDly(OS_TICKS_PER_SEC/20);
 	}
 }
 
@@ -499,7 +433,9 @@ int main(void)
 
 	ledInit();
 	motoInit(14400,0);
-	key_IO_Init();
+	//key_IO_Init();
+	key_Init();
+	
 	//sbus传输初始化
 	rs485_1_Init(115200,UART_CONFIG_PAR_EVEN);
 	stm32_adc1_init();
@@ -516,6 +452,7 @@ int main(void)
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
     /******************************** 使能系统节拍 ******************************/
     SysTick_Config(SystemCoreClock / 1000);
+
     /******************************** 开始多任务 ******************************/
     OSStart();
 

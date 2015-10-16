@@ -414,15 +414,147 @@ void DMA1_Channel2_IRQHandler(void)
 /****************************************************************************
 **Íâ²¿ÖÐ¶ÏÏ
 *****************************************************************************/
-uint8_t  sbusData2[6]={0x5a,0xa5};
+INT8U state;
+INT32U time_left;
 void EXTI2_IRQHandler(void)
 {
-  if(EXTI_GetITStatus(EXTI_Line2)!=RESET)
+  if(EXTI_GetITStatus(EXTI_Line2)!=RESET) //keyA
   {
     EXTI_ClearITPendingBit(EXTI_Line2);
-		RS485Send(1,sbusData2,6);
+		state = OSTmrStateGet(timekeyA, &err_timer);
+		if(state == OS_TMR_STATE_UNUSED || state == OS_TMR_STATE_STOPPED)
+		{
+			//Æô¶¯¶¨Ê±Æ÷
+			timekeyA = OSTmrCreate (150, 0, OS_TMR_OPT_ONE_SHOT, timekey_callback, NULL, "timekeyA", &err_timer);//2s
+			OSTmrStart (timekeyA, &err_timer);
+		}
+		else if(state == OS_TMR_STATE_COMPLETED)//the timer is in ONE-SHOT mode and has completed it's timeout
+		{
+			OSTmrDel(timekeyA, &err_timer);
+			keyst[4]=3;
+		}
+		else if(state == OS_TMR_STATE_RUNNING)
+		{
+			time_left=OSTmrRemainGet(timekeyA, &err_timer);
+			if(time_left<199 )//10msÒÔÉÏ
+			{
+				keyst[4]=2;
+			}
+			OSTmrDel(timekeyA, &err_timer);
+		}
   }
   EXTI_ClearITPendingBit(EXTI_Line2);
+}
+
+void EXTI3_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line3)!=RESET)//keyB
+  {
+    EXTI_ClearITPendingBit(EXTI_Line3);
+		state = OSTmrStateGet(timekeyB, &err_timer);
+		if(state == OS_TMR_STATE_UNUSED || state == OS_TMR_STATE_STOPPED)
+		{
+			//Æô¶¯¶¨Ê±Æ÷
+			timekeyB = OSTmrCreate (150, 0, OS_TMR_OPT_ONE_SHOT, timekey_callback, NULL, "timekeyB", &err_timer);//2s
+			OSTmrStart (timekeyB, &err_timer);
+		}
+		else if(state == OS_TMR_STATE_COMPLETED)//the timer is in ONE-SHOT mode and has completed it's timeout
+		{
+			OSTmrDel(timekeyB, &err_timer);
+			keyst[5]=3;
+		}
+		else if(state == OS_TMR_STATE_RUNNING)
+		{
+			time_left=OSTmrRemainGet(timekeyB, &err_timer);
+			if(time_left<199 )//10msÒÔÉÏ
+			{
+				keyst[5]=2;
+			}
+			OSTmrDel(timekeyB, &err_timer);
+		}
+  }
+  EXTI_ClearITPendingBit(EXTI_Line3);
+}
+
+void EXTI15_10_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line13)!=RESET) //Ò»¼þ·µº½
+  {
+    EXTI_ClearITPendingBit(EXTI_Line13);
+		state = OSTmrStateGet(timekeyHome, &err_timer);
+		if(state == OS_TMR_STATE_UNUSED || state == OS_TMR_STATE_STOPPED)
+		{
+			//Æô¶¯¶¨Ê±Æ÷
+			timekeyHome = OSTmrCreate (150, 0, OS_TMR_OPT_ONE_SHOT, timekey_callback, NULL, "timekeyHome", &err_timer);//2s
+			OSTmrStart (timekeyHome, &err_timer);
+		}
+		else if(state == OS_TMR_STATE_COMPLETED)//the timer is in ONE-SHOT mode and has completed it's timeout
+		{
+			OSTmrDel(timekeyHome, &err_timer);
+			keyst[1]=3;
+		}
+		else if(state == OS_TMR_STATE_RUNNING)
+		{
+			time_left=OSTmrRemainGet(timekeyHome, &err_timer);
+			if(time_left<199 )//10msÒÔÉÏ
+			{
+				keyst[1]=2;
+			}
+			OSTmrDel(timekeyHome, &err_timer);
+		}
+  }
+	else if(EXTI_GetITStatus(EXTI_Line14)!=RESET)  //ÅÄÕÕ
+  {
+    EXTI_ClearITPendingBit(EXTI_Line14);
+		state = OSTmrStateGet(timekeyPhoto, &err_timer);
+		if(state == OS_TMR_STATE_UNUSED || state == OS_TMR_STATE_STOPPED)
+		{
+			//Æô¶¯¶¨Ê±Æ÷
+			timekeyPhoto = OSTmrCreate (150, 0, OS_TMR_OPT_ONE_SHOT, timekey_callback, NULL, "timekeyPhoto", &err_timer);//2s
+			OSTmrStart (timekeyPhoto, &err_timer);
+		}
+		else if(state == OS_TMR_STATE_COMPLETED)//the timer is in ONE-SHOT mode and has completed it's timeout
+		{
+			OSTmrDel(timekeyPhoto, &err_timer);
+			keyst[3]=3;
+		}
+		else if(state == OS_TMR_STATE_RUNNING)
+		{
+			time_left=OSTmrRemainGet(timekeyPhoto, &err_timer);
+			if(time_left<199 )//10msÒÔÉÏ
+			{
+				keyst[3]=2;
+			}
+			OSTmrDel(timekeyPhoto, &err_timer);
+		}
+
+  }
+	else if(EXTI_GetITStatus(EXTI_Line15)!=RESET) //OKF
+  {
+    EXTI_ClearITPendingBit(EXTI_Line15);
+		state = OSTmrStateGet(timekeyOkf, &err_timer);
+		if(state == OS_TMR_STATE_UNUSED || state == OS_TMR_STATE_STOPPED)
+		{
+			//Æô¶¯¶¨Ê±Æ÷
+			timekeyOkf = OSTmrCreate (150, 0, OS_TMR_OPT_ONE_SHOT, timekey_callback, NULL, "timekeyOkf", &err_timer);//2s
+			OSTmrStart (timekeyOkf, &err_timer);
+		}
+		else if(state == OS_TMR_STATE_COMPLETED)//the timer is in ONE-SHOT mode and has completed it's timeout
+		{
+			OSTmrDel(timekeyOkf, &err_timer);
+			keyst[2]=3;
+		}
+		else if(state == OS_TMR_STATE_RUNNING)
+		{
+			time_left=OSTmrRemainGet(timekeyOkf, &err_timer);
+			if(time_left<199 )//10msÒÔÉÏ
+			{
+				keyst[2]=2;
+			}
+			OSTmrDel(timekeyOkf, &err_timer);
+		}
+  }
+
 }
 
 /****************************************************************************

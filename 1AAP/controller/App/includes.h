@@ -80,6 +80,29 @@
 //#define JKB_SW_H
 //无线数据接收FIFO
 extern Queue QueueRFrxFIFO;
+extern INT8U err_timer;
+extern OS_TMR *timekeyHome,*timekeyOkf,*timekeyPhoto,*timekeyA,*timekeyB;
+extern KeyStatus keyst[6];
+
+typedef struct {
+
+		uint16_t  head;
+		uint8_t type;
+		uint8_t length;
+		uint8_t adc[12];
+		uint16_t key;
+	
+//		uint8_t mode:2;
+//		uint8_t gohome:2;
+//		uint8_t launch:2;
+//		uint8_t shoot:2;
+//		uint8_t key_a:2;
+//		uint8_t key_b:2;
+//		uint8_t def:4;
+
+		uint8_t chk;
+}rc_pro_com_in_pkt_t;
+
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
