@@ -111,62 +111,79 @@ static void GPIO_DeIntConfiguration(void)
                            RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |
                            RCC_APB2Periph_GPIOE, DISABLE);
 }
-void usbDisable(void)
+
+void pull_down(void)
 {
 	GPIO_InitTypeDef  GPIO_InitStructure;
-	u32 i=0x2ffffff;
-	
+	u32 i=0x1ffffff;
+
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USB, DISABLE);
-
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11|GPIO_Pin_12;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
 	
-	PowerOff();
-
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11|GPIO_Pin_12;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
+GPIO_ResetBits(GPIOA, GPIO_Pin_11|GPIO_Pin_12);	//USB断开
 	
-	GPIO_ResetBits(GPIOA, GPIO_Pin_11|GPIO_Pin_12);
 	while(i--);
+
+}
+void pull_up(void)
+{
+	GPIO_InitTypeDef  GPIO_InitStructure;
+	u32 i=0x1ffff;
+
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USB, DISABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11|GPIO_Pin_12;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+GPIO_SetBits(GPIOA, GPIO_Pin_11|GPIO_Pin_12);	//USB断开
+	
+	GPIO_DeInit(GPIOA);
+	//while(i--);
+	delay_ms(100);
+
+}
+void usbDisable(void)
+{
+	PowerOff();
+	pull_down();
 }
 /**********************************************************
                            主函数
 **********************************************************/
+	u8 TempBuf [8] __attribute__((at(0X20004800)))  = {1}; //RAM调小后编译通过，都要调小
 int main(void)
 {
-	u8 i=0, mask[4]={1};
+	u8  mask[4]={1};
   RCC_ClocksTypeDef* RCC_Clocks;
+	u32 i=0;
 
-	//GPIO_DeIntConfiguration();
-	
-	//RCC_Configuration();//用内部晶振，并且屏蔽掉SystemInit
-	//delay_init(72);	//初始化延时函数
+	GPIO_DeInit(GPIOA);
+	GPIO_DeInit(GPIOB);
+	GPIO_DeInit(GPIOB);
+	GPIO_AFIODeInit();
 
-	//调回来的时候进入第一个函数就死了？？？在app调回来之前先关掉所有外设中断
 	LED_Init();	//初始化LED接口
-	LedOn(LED_X_G);
-	LedOn(LED_GPS_G);
-	LedOn(LED_CH_G);
-	LedOff(LED_X_R);
-	LedOff(LED_GPS_R);
-	LedOff(LED_CH_R);
+  key_Init();
+
 
 #if 0
 	DFU_Mask_Write(mask); //加标志
 #endif
 	
-//看系统频率
-//	i=RCC_GetSYSCLKSource();
-//	RCC_GetClocksFreq( RCC_Clocks);
-	
 	if(DFU_Mask_Read() == 0)//修改判断
 	//检测是否进入DFU模式按键，开机没有按下则跳转到APP程序中执行
 	//if(DFU_Button_Read() == 1)
 	{
+		__set_PRIMASK(1);//关掉所有中断
 		//关闭USB
 		usbDisable();
-		//__set_PRIMASK(1);//关掉所有中断
+
 		if(((*(__IO uint32_t*)ApplicationAddress) & 0x2FFE0000 ) == 0x20000000)	//检测APP地址是否合法
 		{
 			//跳转到APP地址开始执行，地址+4位置是复位中断入口
@@ -186,10 +203,15 @@ int main(void)
 	DeviceStatus[0] = STATUS_ERRFIRMWARE;
 	DeviceStatus[4] = DeviceState;
 	
+	pull_down();
+	pull_up();
 	Set_System();
 	Set_USBClock();
 	USB_Init();
 	
+	i=0x1ffffff;
+	while(i--);
+
 	
 		//进入APP升级模式
 	mask[0]=0;

@@ -25,7 +25,7 @@
 #define   Task_ADC_Prio       9
 #define   Task_Key_Prio      8
 #define   Task_Uart_Prio      11
-#define   Task_USBHID_Prio    10
+#define   Task_USBHID_Prio    7
 
 
 uint16_t BatteryVoltage;//The battery voltage
@@ -74,6 +74,14 @@ static void NVIC_Configuration(void)
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);	
 }
 
+volatile void stm32_delay_ms(unsigned int x_ms)
+{
+	int i,j;
+
+	for(i=0;i<x_ms;i++)
+		for(j=0;j<7200;j++)
+				__NOP;
+}
 /**********************所有GPIO初始化为默认设置*******************************/
 static void GPIO_DeIntConfiguration(void)
 {
@@ -120,15 +128,6 @@ void TaskStart(void *pdata)
                     Task_ADC_Stk_Size,
                     (void *)0,
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
-//	    OSTaskCreateExt(TaskKey,
-//                    (void *)0,
-//                    &Task_Key_Stk[Task_Key_Stk_Size - 1],
-//                    Task_Key_Prio,
-//                    Task_Key_Prio,
-//                    &Task_Key_Stk[0],
-//                    Task_Key_Stk_Size,
-//                    (void *)0,
-//                    OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
 			OSTaskCreateExt(TaskUart,
                     (void *)0,
                     &Task_Uart_Stk[Task_Uart_Stk_Size - 1],
@@ -158,9 +157,12 @@ void TaskStart(void *pdata)
 
 /********************************* uCOS任务Led *************************************/
 void TaskLedBeep(void *pdata)
-{
-
+{	
 	INT32U testtime;
+	ledInit();
+	motoInit(14400,0);
+	key_Init();
+
 	while(1)
 	{
 		//马达
@@ -217,7 +219,7 @@ void TaskLedBeep(void *pdata)
 
 		}
 		
-		OSTimeDly(OS_TICKS_PER_SEC/20);
+		OSTimeDly(OS_TICKS_PER_SEC);
 	}
 }
 
@@ -229,7 +231,11 @@ void TaskADC(void *pdata)
 	uint16_t ADtoFilter[CHANNEL_NUM][AVERAGE_FILTER_BUFFER_SIZE];
 	rc_pro_com_in_pkt_t sbusData;
 	
-	sbusData.head =0x5AA5;
+	sbusData.head = 0x5AA5;
+	
+		//sbus传输初始化
+	rs485_1_Init(115200,UART_CONFIG_PAR_EVEN);
+	stm32_adc1_init();
 	
 	while(1)
 	{
@@ -250,61 +256,17 @@ void TaskADC(void *pdata)
 		{
 			ADResults[i]=ADResults[i]>>1;
 		}
+		
+		//2通道反向
+		ADResults[1]=0x800 - ADResults[1];
+		//3通道反向
+		ADResults[2]=0x800 - ADResults[2];
+		
 		sbusData.type=1;
 		sbusData.length=14;
 		memcpy(sbusData.adc,ADResults,12);
 		
 		/*key*/
-		sbusData.key=0;
-		sbusData.key |= keyst[0]<<14;
-		sbusData.key |= keyst[1]<<12;
-		sbusData.key |= keyst[2]<<10;
-		sbusData.key |= keyst[3]<<8;
-		sbusData.key |= keyst[4]<<6;
-		sbusData.key |= keyst[5]<<4;
-		/**/
-		
-		sbusData.chk=checksum8((uint8_t *)&sbusData,18);
-		//每10ms发送一次AD
-		RS485Send(1,(uint8_t *)&sbusData,19);
-//		RS485Send(1,(uint8_t *)&sbusData.key,2);
-//		RS485Send(1,(uint8_t *)keyst,6);
-
-		memset(keyst,0,6);
-		
-		BatteryVoltage=ADResults[6];
-		
-		if(BatteryVoltage< 0x8c0)//低于3.6v
-		{
-			ledCHstate=0;
-	  }
-		else
-		{
-			ledCHstate=1;
-		}
-		
-		OSTimeDly(OS_TICKS_PER_SEC/1);
-	}
-}
-
-/******************************* uCOS任务Key ***********************************/
-void TaskKey(void *pdata)
-{
-		
-	while(1)
-	{
-		keyst[4]=ReadKeyStatus(KEY_A_GPIO,KEY_A,&keyAst);
-
-		keyst[5]=ReadKeyStatus(KEY_B_GPIO,KEY_B,&keyBst);
-
-		keyst[2]=ReadKeyStatus(KEY_OKF_GPIO,KEY_OKF,&keyOKFst);
-
-		keyst[1]=ReadKeyStatus(KEY_HOME_GPIO,KEY_HOME,&keyHOMEst);
-
-		keyst[3]=ReadKeyStatus(KEY_PHOTO_GPIO,KEY_PHOTO,&keyPHOTOst);
-
-		//keyst[3]=ReadKeyStatus(KEY_VIDEO_GPIO,KEY_VIDEO,&keyVIDEOst);
-		
 		if(GPIO_ReadInputDataBit(KEY_THREE_GPIO,KEY_NEWHAND)==0)
 		{
 			keyst[0]=1;
@@ -317,29 +279,52 @@ void TaskKey(void *pdata)
 		{
 			keyst[0]=3;
 		}
+		sbusData.key[0]=0;
+		sbusData.key[1]=0;
+		sbusData.key[0] |= keyst[0]<<6;
+		sbusData.key[0] |= keyst[1]<<4;
+		sbusData.key[0] |= keyst[2]<<2;
+		sbusData.key[0] |= keyst[3];
+		sbusData.key[1] |= keyst[4]<<6;
+		sbusData.key[1] |= keyst[5]<<4;
+		/**/
 		
-		OSTimeDly(OS_TICKS_PER_SEC/20);
+		sbusData.chk=checksum8((uint8_t *)&sbusData,18);
+		//每10ms发送一次AD
+		RS485Send(1,(uint8_t *)&sbusData,19);
+//		RS485Send(1,(uint8_t *)&sbusData.key,2);
+//		RS485Send(1,(uint8_t *)keyst+1,1);
+
+		memset(keyst,1,6);
+		
+		BatteryVoltage=ADResults[6];
+		
+		if(BatteryVoltage< 0x8c0)//低于3.6v
+		{
+			ledCHstate=0;
+	  }
+		else
+		{
+			ledCHstate=1;
+		}
+		
+		OSTimeDly(OS_TICKS_PER_SEC/200);
 	}
 }
 
-/********************************* uCOS任务	Uart *************************************/
+/********************************* uCOS任务	Uart接收**********************************/
 void TaskUart(void *pdata)
 {
 	uint8_t test[16],len;
 	while(1)
 	{
-		if(nCom1.nBuff.UsartRxBuff[0]==0x11)
-		{
-				ledXstate=1;
-				nCom1.nBuff.UsartRxBuff[0]=0;
-		}
-		else if(nCom1.nBuff.UsartRxBuff[0]==0x10)
-		{
-				ledXstate=0;
-				nCom1.nBuff.UsartRxBuff[0]=0;
-		}
+//		if(nCom1.nBuff.UsartRxBuff[0]==0x11)
+//		{
+//				ledXstate=1;
+//				nCom1.nBuff.UsartRxBuff[0]=0;
+//		}
 		
-		OSTimeDly(OS_TICKS_PER_SEC/20);
+		OSTimeDly(OS_TICKS_PER_SEC);
 	}
 }
 
@@ -348,6 +333,7 @@ void TaskUSBHID(void *pdata)
 {
 	uint8_t InBuffer[8]={1,2,3,4,5,6,7,8};
 	uint8_t wFlashBuffer[4]={0},rFlashBuffer[4];
+
 	while(1)
 	{
 		//读取缓冲区HID指令
@@ -381,19 +367,9 @@ void TaskUSBHID(void *pdata)
 				}
 				else
 				{
-					__set_PRIMASK(1);//关掉所有中断
-					//关闭USB
-					usbDisable();
-					
-					//跳转到IAP地址开始执行，地址+4位置是复位中断入口 ApplicationAddress=0
-					JumpAddress = *(__IO uint32_t*) (ApplicationAddress + 4);
-					Jump_To_Application = (pFunction) JumpAddress;
-
-					//设置IAP程序堆栈指针
-					__set_MSP(*(__IO uint32_t*) ApplicationAddress);
-					
-					//跳转到APP程序中执行
-					Jump_To_Application();
+					//回到IAP
+					__set_FAULTMASK(1);      
+					NVIC_SystemReset();// 
 				}
 			}
 			else if (HIDReceive_Buffer[0] == 0x04)
@@ -408,14 +384,14 @@ void TaskUSBHID(void *pdata)
 			
 			HIDReceive_Buffer[0]=0;
 
-		OSTimeDly(OS_TICKS_PER_SEC/100);
+		OSTimeDly(OS_TICKS_PER_SEC/10);
 	}
 }
-
 
 /********************************* Main函数 *************************************/
 int main(void)
 {
+
 		//SystemInit();//usb中断必须要？？这个
 #ifdef JKB_SW_H
 	SCB->VTOR = FLASH_BASE | 0x10000; /* Vector Table Relocation in Internal FLASH. */
@@ -424,22 +400,26 @@ int main(void)
 
 	/******************************** 中断向量初始化 ****************************/	
 	NVIC_Configuration();//boot要修改flash地址
-	//__set_PRIMASK(1);//打开所有中断
+
 	/****************************** GPIO恢复到默认配置 **************************/	
-	GPIO_DeIntConfiguration();
+	//GPIO_DeIntConfiguration();
+	GPIO_DeInit(GPIOA);
+	GPIO_DeInit(GPIOB);
+	GPIO_DeInit(GPIOC);
+	GPIO_AFIODeInit();
 	/******************************** uCOS-II初始化 *****************************/
   OSInit();
-  /******************************** 硬件初始化 *********************************/
+  /********************* USB初始化必须放在前面 *********************************/
+	__set_PRIMASK(0);//
 
-	ledInit();
-	motoInit(14400,0);
-	//key_IO_Init();
-	key_Init();
+	USB_IO_PullDown();
+	stm32_delay_ms(1000);
 	
-	//sbus传输初始化
-	rs485_1_Init(115200,UART_CONFIG_PAR_EVEN);
-	stm32_adc1_init();
+	USB_IO_PullUp();
+	stm32_delay_ms(100);
+
 	usbHIDInit();	
+		
   /******************************** 创建启动任务 ******************************/
     OSTaskCreateExt(TaskStart,
                     (void *)0,

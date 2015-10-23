@@ -1,0 +1,29 @@
+应急机求随机数
+1万次SAM1 全部通过没有err
+2万次SAM2 全部通过没有err
+
+
+Length: 0001, Data: FA 
+Length: 0009, Data: AA E9 03 0F 00 5C 13 10 03 
+Length: 0001, Data: 10 
+Length: 0001, Data: AB 
+Length: 0002, Data: 00 00 
+Length: 0003, Data: AB 10 03 
+Length: 0001, Data: FA 
+Length: 0006, Data: AA 7E 00 D4 10 03 
+Length: 0001, Data: 10 
+Length: 0001, Data: AB 
+Length: 0002, Data: 00 11 
+Length: 0020, Data: 10 3B 6C 00 02 51 61 86 38 00 00 00 00 00 01 75 FD F8 10 03 
+Length: 0001, Data: FA 
+Length: 0017, Data: AA 1D 0B 0F 00 5C 07 00 A4 00 00 02 3F 00 71 10 03 
+Length: 0001, Data: 10 
+Length: 0001, Data: AB 
+Length: 0002, Data: 00 0D 
+Length: 0016, Data: 0C 6F 15 84 0E 31 50 41 59 90 00 90 00 23 10 03 
+Length: 0001, Data: FA 
+Length: 0017, Data: AA 1D 0B 0F 00 5C 07 00 A4 00 00 02 10 03 5D 10 03 
+Length: 0001, Data: 10 
+Length: 0001, Data: AB 
+Length: 0002, Data: 00 0D 
+Length: 0016, Data: 0C 6F 0A A5 08 9F 0C 05 10 90 00 90 00 E4 10 03 

@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\svn_工作_最新的代码都在这里\new_bdgps\test\ZM470tranrec\Project\STM32_uCOS_BSP_LIB.uvproj
+Project File Date:  06/24/2015
+
+<h2>Output:</h2>
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(284): warning:  #177-D: variable "CardType" was declared but never referenced
+        uint8_t CardType=0,rData[50]={0},RndCount=8;
+..\App\main.c(284): warning:  #177-D: variable "rData" was declared but never referenced
+        uint8_t CardType=0,rData[50]={0},RndCount=8;
+..\App\main.c(284): warning:  #177-D: variable "RndCount" was declared but never referenced
+        uint8_t CardType=0,rData[50]={0},RndCount=8;
+..\App\main.c(286): warning:  #177-D: variable "ret1" was declared but never referenced
+        uint32_t ret1=0;
+..\App\main.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=14264 RO-data=696 RW-data=88 ZI-data=12544  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Error(s), 4 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\svn_工作_最新的代码都在这里\new_bdgps\test\ZM470tranrec\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.90 , compiled Jul 28 2014 10:35:20
+Firmware: J-Link ARM V8 compiled Jan 31 2018 18:34:52
+Hardware: V8.00
+S/N : 20080643 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.306V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.

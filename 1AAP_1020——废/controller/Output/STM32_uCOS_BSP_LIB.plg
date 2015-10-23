@@ -1,0 +1,1033 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\STM32_uCOS_BSP_LIB.uvproj
+Project File Date:  10/20/2015
+
+<h2>Output:</h2>
+compiling main.c...
+..\App\main.c(163): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(246): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(260): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(264): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(268): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(323): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(327): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(331): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(341): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(341): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(362): warning:  #177-D: variable "InBuffer" was declared but never referenced
+"..\App\main.c" - 0 Errors, 11 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=22076 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(163): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(246): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(260): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(264): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(268): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(323): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(327): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(331): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(341): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(341): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(362): warning:  #177-D: variable "InBuffer" was declared but never referenced
+compiling stm32f10x_it.c...
+..\Bsp\stm32f10x_it.c(437): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(444): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(472): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(479): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(508): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(515): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(536): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(543): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(565): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(572): warning:  #188-D: enumerated type mixed with another type
+compiling RS485.c...
+..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+compiling Stm32Usart.c...
+compiling led.c...
+..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
+..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
+compiling sbus.c...
+compiling adc.c...
+..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
+compiling key.c...
+compiling usbHID.c...
+..\Bsp\usbHID.c(31): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(48): warning:  #1-D: last line of file ends without a newline
+compiling flash_in_stm32.c...
+compiling system_stm32f10x.c...
+linking...
+Program Size: Code=22132 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 27 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(163): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(246): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(260): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(264): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(268): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(323): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(327): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(331): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(341): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(341): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(362): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22128 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22132 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22132 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=22132 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+assembling startup_stm32f10x_hd.s...
+linking...
+Program Size: Code=21968 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.277V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=21960 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.277V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22124 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(30): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(47): warning:  #1-D: last line of file ends without a newline
+compiling usb_pwr.c...
+linking...
+Program Size: Code=22144 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 2 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=22144 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling hw_config.c...
+linking...
+Program Size: Code=22220 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+compiling usbHID.c...
+..\Bsp\usbHID.c(30): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(34): warning:  #1-D: last line of file ends without a newline
+..\Bsp\usbHID.c(25): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+linking...
+Program Size: Code=22158 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 14 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22158 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22158 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22158 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+..\App\main.c(458): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=14582 RO-data=766 RW-data=416 ZI-data=9088  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 12 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22158 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=22158 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=21994 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+compiling stm32f10x_it.c...
+..\Bsp\stm32f10x_it.c(437): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(444): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(472): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(479): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(508): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(515): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(536): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(543): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(565): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(572): warning:  #188-D: enumerated type mixed with another type
+compiling RS485.c...
+..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+compiling Stm32Usart.c...
+compiling led.c...
+..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
+..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
+compiling sbus.c...
+compiling adc.c...
+..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
+compiling key.c...
+compiling usbHID.c...
+..\Bsp\usbHID.c(30): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(34): warning:  #1-D: last line of file ends without a newline
+..\Bsp\usbHID.c(25): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+compiling flash_in_stm32.c...
+compiling system_stm32f10x.c...
+linking...
+Program Size: Code=21938 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 28 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+compiling stm32f10x_it.c...
+..\Bsp\stm32f10x_it.c(437): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(444): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(472): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(479): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(508): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(515): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(536): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(543): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(565): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(572): warning:  #188-D: enumerated type mixed with another type
+compiling RS485.c...
+..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+compiling Stm32Usart.c...
+compiling led.c...
+..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
+..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
+compiling sbus.c...
+compiling adc.c...
+..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
+compiling key.c...
+compiling usbHID.c...
+..\Bsp\usbHID.c(30): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(34): warning:  #1-D: last line of file ends without a newline
+..\Bsp\usbHID.c(25): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+compiling flash_in_stm32.c...
+compiling system_stm32f10x.c...
+linking...
+Program Size: Code=21994 RO-data=766 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 28 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+compiling usbHID.c...
+..\Bsp\usbHID.c(30): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(43): warning:  #1-D: last line of file ends without a newline
+compiling hw_config.c...
+linking...
+Program Size: Code=21980 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 2 Warning(s).
+Build target 'STM32_uCOS_BSP_LIB'
+linking...
+Program Size: Code=21980 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 0 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+compiling stm32f10x_it.c...
+..\Bsp\stm32f10x_it.c(437): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(444): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(472): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(479): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(508): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(515): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(536): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(543): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(565): warning:  #188-D: enumerated type mixed with another type
+..\Bsp\stm32f10x_it.c(572): warning:  #188-D: enumerated type mixed with another type
+compiling RS485.c...
+..\Bsp\RS485.c(11): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
+compiling Stm32Usart.c...
+compiling led.c...
+..\Bsp\led.c(38): warning:  #9-D: nested comment is not allowed
+..\Bsp\led.c(40): warning:  #9-D: nested comment is not allowed
+compiling sbus.c...
+compiling adc.c...
+..\Bsp\adc.c(5): warning:  #177-D: variable "ADC_Filter" was declared but never referenced
+compiling key.c...
+compiling usbHID.c...
+..\Bsp\usbHID.c(30): warning:  #223-D: function "PowerOff" declared implicitly
+..\Bsp\usbHID.c(43): warning:  #1-D: last line of file ends without a newline
+compiling flash_in_stm32.c...
+compiling system_stm32f10x.c...
+linking...
+Program Size: Code=21924 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 27 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.274V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'STM32_uCOS_BSP_LIB'
+compiling main.c...
+..\App\main.c(162): warning:  #177-D: variable "testtime" was declared but never referenced
+..\App\main.c(253): warning:  #223-D: function "average_filter" declared implicitly
+..\App\main.c(267): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(271): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(330): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(334): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(338): warning:  #188-D: enumerated type mixed with another type
+..\App\main.c(348): warning:  #177-D: variable "test" was declared but never referenced
+..\App\main.c(348): warning:  #177-D: variable "len" was declared but never referenced
+..\App\main.c(369): warning:  #177-D: variable "InBuffer" was declared but never referenced
+linking...
+Program Size: Code=22096 RO-data=768 RW-data=444 ZI-data=13268  
+FromELF: creating hex file...
+"..\Output\STM32_uCOS_BSP_LIB.axf" - 0 Errors, 11 Warning(s).
+Load "..\\Output\\STM32_uCOS_BSP_LIB.axf" 
+Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\1AAP\controller\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link V9 compiled Jun 23 2015 10:00:59
+Hardware: V9.20
+Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103CB
+VTarget = 3.275V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
