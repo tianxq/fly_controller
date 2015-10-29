@@ -20,6 +20,9 @@
 #include "usb_pwr.h"
 #include "dfu_mal.h"
 
+//#define HIDmask_address 0X20004F00
+//u8 HIDmask [16] __attribute__((at(HIDmask_address)))={0};  ; //RAM调小后编译通过，都要调小
+
 u8 Dis_buffer[16];	//显示缓存
 
 typedef  void (*pFunction)(void);
@@ -32,14 +35,25 @@ uint32_t JumpAddress;
 u8 DFU_Mask_Read(void)
 {
 	uint8_t mask[4];
-  ReadFlashNBtye(0, mask, 4);  
-	return mask[0];
+
+#ifdef HIDmask_address
+	mask[0] = *(u8 *)HIDmask_address;
+#else
+	ReadFlashNBtye(0, mask, 4); 
+#endif
+		return mask[0];
 }
 u8 DFU_Mask_Write(u8 *mask)
 {
 	uint8_t mask2[4];
+#ifdef HIDmask_address
+	*(u8 *)HIDmask_address = *mask;
+	mask2[0] = *(u8 *)HIDmask_address;
+#else
+	FLASH_ErasePage(STARTADDR);
 	WriteFlashNBtye(0,mask,4);
   ReadFlashNBtye(0, mask2, 4);
+#endif
 	if(*mask == mask2[0]) return 1;
 	else return 0;
 }
@@ -156,7 +170,6 @@ void usbDisable(void)
 /**********************************************************
                            主函数
 **********************************************************/
-	u8 TempBuf [8] __attribute__((at(0X20004800)))  = {1}; //RAM调小后编译通过，都要调小
 int main(void)
 {
 	u8  mask[4]={1};
@@ -209,7 +222,7 @@ int main(void)
 	Set_USBClock();
 	USB_Init();
 	
-	i=0x1ffffff;
+	i=0x1fff;
 	while(i--);
 
 	

@@ -4,9 +4,21 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\IAP_USB.uvproj
-Project File Date:  10/22/2015
+Project File Date:  10/28/2015
 
 <h2>Output:</h2>
+Build target 'IAP_USB'
+compiling stm32f10x_it.c...
+compiling main.c...
+main.c(149): warning:  #177-D: variable "i" was declared but never referenced
+main.c(176): warning:  #177-D: variable "RCC_Clocks" was declared but never referenced
+main.c(106): warning:  #177-D: function "GPIO_DeIntConfiguration" was declared but never referenced
+compiling led.c...
+compiling hw_config.c...
+linking...
+Program Size: Code=18636 RO-data=400 RW-data=1048 ZI-data=2784  
+FromELF: creating hex file...
+"..\OBJ\IAP_USB.axf" - 0 Errors, 3 Warning(s).
 Load "..\\OBJ\\IAP_USB.axf" 
 Set JLink Project File to "E:\Ò£¿ØÆ÷\fly_controller\2IAP\IAP_USB_Bootloader_V1.0\USER\JLinkSettings.ini"
 * JLink Info: Device "STM32F103CB" selected (128 KB flash, 20 KB RAM).
@@ -36,9 +48,7 @@ Software-Breakpoints: 8192
 Watchpoints:          4
 JTAG speed: 2000 kHz
  
-No Algorithm found for: 20004800H - 20004807H
-Partial Erase Done (areas with no algorithms skipped!)
-No Algorithm found for: 20004800H - 20004807H
-Partial Programming Done (areas with no algorithms skipped!)
-Partial Verify OK (areas with no algorithms skipped!)
+Erase Done.
+Programming Done.
+Verify OK.
 Application running ...

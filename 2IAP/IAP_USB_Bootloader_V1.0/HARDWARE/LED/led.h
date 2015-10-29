@@ -25,7 +25,7 @@
 //#define LED0					PCout(0)
 //#define LED1					PCout(1)
 
-#define LED0					PBout(5)
+#define LED0					PBout(6)
 #define LED1					PEout(6)
 
 #define LED_GPIO    GPIOB
