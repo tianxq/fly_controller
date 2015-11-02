@@ -298,7 +298,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8010000</StartAddress>
-                <Size>0xc000</Size>
+                <Size>0xf000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -348,10 +348,10 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>--c99</MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER,JKB_SW_H</Define>
               <Undefine></Undefine>
-              <IncludePath>..\FWlib\inc;..\CMSIS;..\App;..\Bsp;..\uCOS-II\Source;..\uCOS-II\Config;..\uCOS-II\Ports;..\Bsp\usb;..\STM32_USB-FS-Device_Driver\inc;..\STM32_USB-FS-Device_Driver\src</IncludePath>
+              <IncludePath>..\FWlib\inc;..\CMSIS;..\App;..\Bsp;..\uCOS-II\Source;..\uCOS-II\Config;..\uCOS-II\Ports;..\Bsp\usb;..\STM32_USB-FS-Device_Driver\inc;..\STM32_USB-FS-Device_Driver\src;..\SEGGER\RTT</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

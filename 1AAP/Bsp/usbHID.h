@@ -5,8 +5,8 @@
 typedef   enum 
 {  
 	HIDmask_address_boot=0, 
-	HIDmask_address_adcinversion=24+FLASH_PAGE_SIZE, //反转
 	HIDmask_address_calibration=0+FLASH_PAGE_SIZE,  //校准(H/L)
+	HIDmask_address_adcinversion=HIDmask_address_calibration+16, //反转
 	HIDmask_address_amjp=30+FLASH_PAGE_SIZE,        //日本手美国手  
 	 
 }HIDmask_address; 

@@ -65,8 +65,8 @@ void RC_Bus_Task(void * pdata)
 	if (get_rc_profile_param(&RC_Profile_Cfg) == true)
 		RC_Profile_Cfg.enable = true;
 
-	RC_Profile_Cfg.chann2_value_reverse = 1;
-	RC_Profile_Cfg.chann3_value_reverse = 1;
+//	RC_Profile_Cfg.chann2_value_reverse = 1;
+//	RC_Profile_Cfg.chann3_value_reverse = 1;
 
 	while(1)
 	{
@@ -102,10 +102,7 @@ if (channel1 || channel2 )
  */
 void hal_rc_bus_init(void)
 {
-//     hal_usart1_base_init(115200, USART_Parity_Even, USART_StopBits_1);
-
-//     hal_usart1_dma_config(rCBusRxBuffer, sizeof(rCBusRxBuffer), RCBusTxData.buffer, sizeof(rc_info_pkt_t));
-		ComPort1Init(115200,UART_CONFIG_PAR_EVEN);
+	ComPort1Init(115200,UART_CONFIG_PAR_EVEN);
 }
 
 

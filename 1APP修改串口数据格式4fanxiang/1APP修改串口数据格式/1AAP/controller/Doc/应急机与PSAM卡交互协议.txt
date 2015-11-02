@@ -1,9 +1,0 @@
-应急机发送指令 PSAM回复
-1，选择卡槽 aa e9(1d) 卡槽号        aa e9 01 
-            ab ret len              ab 01 00
-
-2，初始化   aa 7e                   aa 7e
-            ab ret len 值           ab 01 02 3b 1d
-
-3，应用指令 aa 7d len 指令          aa 7d 05 00 84 00 00 08
-            ab ret len SW1 SW2 值   ab 01 0a 90 00 96 e9 78 39 cd 8e 9a 82

@@ -128,7 +128,7 @@ void RC_Channel_Calibrate_Process(void *pdata)
 										};
     uint32_t timeout = 6000;//6000*5ms = 30s
 
-    RC_Profile_Cfg.enable = FALSE;//disable the adjust.
+    RC_Profile_Cfg.enable = FALSE;//disable the adjust.TRUE
 
     do{
 		if ((timeout & 0x003ful) == 0)
@@ -153,8 +153,10 @@ void RC_Channel_Calibrate_Process(void *pdata)
     newConfig.valid_chk = check_sum8(((uint8_t *)&newConfig) , (sizeof(struct RC_Profile_Cfg_t)-4));
 
     /* Store the parameters into the flash */
-    WriteFlashNBtye(RC_PROFILE_PARAM_ADDR,(uint8_t *)&newConfig, sizeof(struct RC_Profile_Cfg_t));
-
+		memcpy((u8 *)&RC_Profile_Cfg,(u8 *)&newConfig,17);
+		RC_Profile_Cfg.enable = TRUE;
+    WriteFlashNBtye(RC_PROFILE_PARAM_ADDR,(uint8_t *)&RC_Profile_Cfg, sizeof(struct RC_Profile_Cfg_t));
+		
     LedOff(LED_X_R);
 
     OSTaskDel(OS_PRIO_SELF);
@@ -185,9 +187,9 @@ void adjust_channels_degree(uint16_t raw[4], uint16_t channels[4])
 
 		dtemp = (uint16_t)ftemp;
 
-        /* deverse */
-        if ( ((RC_Profile_Cfg.chann_reverse>>i)&0x01) == 1 )
-            channels[i] = 2000 - dtemp;
+		/* deverse */
+		if ( ((RC_Profile_Cfg.chann_reverse>>i)&0x01) == 1 )
+				channels[i] = 2000 - dtemp;
 		else
 			channels[i] = dtemp;
 	}

@@ -33,15 +33,6 @@ void TaskUSBHID(void *pdata)
 	//uint8_t InBuffer[8]={1,2,3,4,5,6,7,8};
 	uint8_t wFlashBuffer[4]={0},rFlashBuffer[4];
 
-//	USB_IO_PullDown();
-//	OSTimeDly(OS_TICKS_PER_SEC);
-
-//	USB_IO_PullUp();
-//	OSTimeDly(OS_TICKS_PER_SEC);
-
-//	usbHIDInit();
-
-
 	while(1)
 	{
 		//1,校准
@@ -64,7 +55,8 @@ void TaskUSBHID(void *pdata)
 			}
 			else if (HIDReceive_Buffer[0] == 0x02)//handStyle
 			{
-				if(writeMask(HIDmask_address_amjp,HIDReceive_Buffer+1,1) ==0)
+				RC_Profile_Cfg.amjp=HIDReceive_Buffer[1];
+				if(writeMask(HIDmask_address_calibration,(uint8_t *)&RC_Profile_Cfg, sizeof(struct RC_Profile_Cfg_t)) ==0)
 				{ 
 					
 				}
@@ -72,7 +64,7 @@ void TaskUSBHID(void *pdata)
 			}
 			else if (HIDReceive_Buffer[0] == 0x03)//updata
 			{
-				if(writeMask(HIDmask_address_boot,HIDReceive_Buffer+1,1) ==0)
+				if(writeMask(HIDmask_address_boot,HIDReceive_Buffer+1,4) ==0)
 				{ 
 					//
 				}
@@ -93,8 +85,9 @@ void TaskUSBHID(void *pdata)
 			}
 			else if (HIDReceive_Buffer[0] == 0x05)
 			{
-				//adc反向
-				if(writeMask(HIDmask_address_adcinversion,HIDReceive_Buffer+1,6) ==0)
+				//adc反向,1-4通道占一位0000xxxx
+				RC_Profile_Cfg.chann_reverse=HIDReceive_Buffer[1];
+				if(writeMask(HIDmask_address_calibration,(uint8_t *)&RC_Profile_Cfg, sizeof(struct RC_Profile_Cfg_t)) ==0)
 				{ 
 					
 				}

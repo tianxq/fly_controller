@@ -21,7 +21,8 @@ struct RC_Profile_Cfg_t {
 
     uint16_t ADC_Val_Max[4];
     uint16_t ADC_Val_Min[4];
-
+		uint8_t valid_chk;
+	
     union {
         uint8_t chann_reverse;
         struct {
@@ -32,8 +33,8 @@ struct RC_Profile_Cfg_t {
         };
     };
 	
-	uint8_t valid_chk;
 	uint8_t enable;
+	uint8_t amjp;
 	uint8_t reseved;
 };
 
